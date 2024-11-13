@@ -94,7 +94,7 @@ const TeamMember: React.FC<TeamMemberProps> = ({ imageSrc, name, title, bio }) =
 
   return (
     <>
-      <div className="mx-auto mb-8 rounded-lg overflow-hidden transition-transform transform hover:scale-[98%]">
+      <div className="mb-8 rounded-lg overflow-hidden transition-transform transform hover:scale-[98%]">
         {/* Team Member Card */}
         <div className="relative cursor-pointer" onClick={toggleModal}>
           <img src={imageSrc} alt={name} className="w-[400px] h-[400px] object-cover" />
