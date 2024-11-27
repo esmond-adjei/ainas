@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Facebook, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
+import CustomIcon from './CustomIcon';
 
 export default function Footer() {
   return (
@@ -11,9 +12,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Logo and Brief Description */}
           <div className="flex flex-col mb-8">
-            <Link href="/" className="text-2xl font-heading font-bold text-primary">
+
+            <Link href="/" className="text-2xl w-max font-heading font-bold text-primary">
+              <CustomIcon className="h-16 w-16 mx-auto" style={{fill: 'var(--primary-color)'}}/>
               AINAS
             </Link>
+  
             <p className="text-sm text-gray-300 max-w-xs">
               Empowering communities with sustainable, nature-based solutions for a greener tomorrow.
             </p>
@@ -40,7 +44,7 @@ export default function Footer() {
           <div className="space-y-4">
             <h3 className="text-xl font-semibold mb-4">Contact</h3>
             <div className="space-y-5">
-              <div className="flex items-center">
+              <div className="flex">
                 <Mail className="text-primary mr-4" size={20} />
                 <div>
                   <h4 className="text-sm font-semibold">Email</h4>
@@ -48,7 +52,7 @@ export default function Footer() {
                 </div>
               </div>
 
-              <div className="flex items-center">
+              <div className="flex">
                 <Phone className="text-primary mr-4" size={20} />
                 <div>
                   <h4 className="text-sm font-semibold">Phone</h4>
@@ -56,11 +60,16 @@ export default function Footer() {
                 </div>
               </div>
 
-              <div className="flex items-center">
+              <div className="flex">
                 <MapPin className="text-primary mr-4" size={20} />
                 <div>
                   <h4 className="text-sm font-semibold">Our Address</h4>
-                  <p className="text-gray-300 text-xs">House No. 15, Anyaa-Atlas Junction, GC-112-3633, Accra, Ghana</p>
+                  <p className="text-gray-300 text-xs leading-5">
+                    House No. 15, <br/>
+                    Anyaa-Atlas Junction, <br/> 
+                    GC-112-3633, <br/> 
+                    Accra, Ghana <br/>
+                  </p>
                 </div>
               </div>
             </div>

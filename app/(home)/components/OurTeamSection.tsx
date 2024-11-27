@@ -1,7 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import TeamMember from './TeamMember';
+import TeamMember from '@/components/TeamMember';
 
 export default function OurTeam() {
   // Define the team members data array

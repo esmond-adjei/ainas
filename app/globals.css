@@ -2,10 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-/* :root {
+:root {
   --background: #ffffff;
   --foreground: #171717;
-} */
+  --primary-color: #3B7A57;
+  --secondary-color: #f5e1a4;
+}
 
 /* @media (prefers-color-scheme: dark) {
   :root {

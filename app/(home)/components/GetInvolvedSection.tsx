@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Users, Hand, Heart, Briefcase } from 'lucide-react';
-import InfoCard from './InfoCard';
+import InfoCard from '@/components/InfoCard';
 
 const GetInvolved = () => {
     return (

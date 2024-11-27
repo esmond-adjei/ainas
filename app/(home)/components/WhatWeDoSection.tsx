@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Sprout, Droplet, Sun, Building, Heart } from 'lucide-react';
-import InfoCard from './InfoCard';
+import InfoCard from '@/components/InfoCard';
 
 export default function WhatWeDoSection() {
     return (

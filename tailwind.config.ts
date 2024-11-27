@@ -15,8 +15,8 @@ export default {
     // },
     extend: {
       colors: {
-        primary: '#3B7A57',   // Forest green for primary buttons and accents
-        secondary: '#f5e1a4', // Earthy yellow for highlights
+        primary: 'var(--primary-color)',   //#2a9894 Forest green for primary buttons and accents
+        secondary: 'var(--secondary-color)', // Earthy yellow for highlights
         accent: '#60a5fa',    // Soft blue for links and CTAs
         dark: '#1f2937',      // Darker background and text color
         light: '#f3f4f6',     // Light background for contrast

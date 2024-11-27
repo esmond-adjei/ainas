@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Leaf, Globe, Lightbulb } from 'lucide-react';
-import InfoCard from './InfoCard';
+import InfoCard from '@/components/InfoCard';
 
 export default function MissionSection() {
     return (

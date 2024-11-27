@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import ImpactArea from './ImpactArea';
+import ImpactArea from '@/components/ImpactArea';
 import { Camera, Users, Activity, Globe } from 'lucide-react';
 
 const ImpactSection = () => {
