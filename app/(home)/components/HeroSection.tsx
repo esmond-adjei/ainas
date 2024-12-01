@@ -36,9 +36,40 @@ export default function Hero() {
             href="/about"
             className="inline-block px-6 py-3 bg-secondary text-dark hover:text-light font-semibold rounded-full hover:bg-primary transition-all duration-300"
           >
-            Become a member
+            Get Involved
           </Link>
         </div>
+      </div>
+    </motion.section>
+  );
+}
+
+export function PageHero(
+  {title, description, backgroundImage}:
+  {title: string, description?: string, backgroundImage: string}
+) {
+  return (
+    <motion.section
+      className="relative flex flex-col justify-center h-[320px] bg-cover bg-center text-white"
+      style={{ backgroundImage: `url(${backgroundImage})` }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+    >
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-black bg-opacity-70"></div>
+
+      {/* Content */}
+      <div className="relative z-10 px-4 container mx-auto">
+        <h1 className="text-3xl md:text-4xl font-heading font-bold text-white text-center mb-6">
+          {title}
+        </h1>
+        {
+          description &&
+        <p className="text-lg md:text-xl max-w-2xl text-light mb-8">
+          {description}
+        </p>
+        }
       </div>
     </motion.section>
   );

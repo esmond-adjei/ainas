@@ -1,4 +1,4 @@
-import { NavbarV2 } from "@/components/Navbar";
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 
@@ -9,7 +9,7 @@ export default function HomeLayout({
 }>) {
   return (   
     <>
-      <NavbarV2 />
+      <Navbar/>
         <main>{children}</main>
       <Footer/>
     </> 

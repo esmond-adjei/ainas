@@ -15,11 +15,13 @@ export default {
     // },
     extend: {
       colors: {
-        primary: 'var(--primary-color)',   //#2a9894 Forest green for primary buttons and accents
-        secondary: 'var(--secondary-color)', // Earthy yellow for highlights
+        primary: 'var(--primary-color)',
+        secondary: 'var(--secondary-color)',
+        primaryBright: 'var(--primary-color-bright)',
         accent: '#60a5fa',    // Soft blue for links and CTAs
         dark: '#1f2937',      // Darker background and text color
         light: '#f3f4f6',     // Light background for contrast
+        borderColor: '#ccaacc',
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
