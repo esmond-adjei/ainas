@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ChevronDown, ChevronUp, Menu, X } from 'lucide-react';
 import CustomIcon from './CustomIcon';
+import { ROUTES } from '@/lib';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -170,7 +171,7 @@ const NavMenu: React.FC<{isScrolled: boolean}> = ({isScrolled}) => {
             </DropDownMenuItem>
 
             {/* Get Involved */}
-            <Link href="/get-involved" className="menu-item">
+            <Link href="#contact-us" className="menu-item">
               Get Involved
             </Link>
         </div>
@@ -210,6 +211,8 @@ const DropDownMenuItem: React.FC<DropDownMenuItemProps> = ({
     <div ref={ref} className="relative">
       <button
         onClick={() => setOpen(!open)}
+        // onMouseEnter={() => setOpen(true)}
+        // onMouseLeave={() => setOpen(false)} // TODO: unable to click
         className="flex items-center menu-item"
         aria-expanded={open}
         aria-haspopup="menu"
@@ -221,15 +224,15 @@ const DropDownMenuItem: React.FC<DropDownMenuItemProps> = ({
         }
       </button>
         {open && (
-          <>
+          <div>
           <span className='size-4 top-8 bg-gray-50 rotate-45 translate-x-[50%] shadow-lg absolute z-40'></span>
           <div
-            className="absolute z-40 top-10 -translate-x-[25%] w-40 p-2 text-sm rounded-lg text-dark shadow-lg bg-gray-50"
+            className="bg-gray-50 absolute z-40 top-10 -translate-x-[25%] w-40 p-2 text-sm rounded-lg text-dark shadow-lg"
             role="menu"
           >
             {children}
           </div>
-          </>
+          </div>
         )}
   </div>
   )

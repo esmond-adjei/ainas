@@ -1,5 +1,6 @@
 'use client';
 
+import { ROUTES } from '@/lib';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
@@ -16,24 +17,24 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black bg-opacity-70"></div>
 
       {/* Content */}
-      <div className="relative z-10 px-4 container mx-auto">
+      <div className="relative z-10 px-4 max-w-4xl mx-auto">
         <h1 className="text-5xl md:text-6xl font-heading font-bold text-white mb-6 drop-shadow-lg">
-          Welcome to AINAS
+        Promoting Sustainable Development of Africa
         </h1>
-        <p className="text-lg md:text-xl max-w-2xl text-light mb-8">
+        <p className="text-lg md:text-xl text-light mb-8">
           Empowering African communities with sustainable, nature-based solutions for a greener and more prosperous future.
         </p>
 
         {/* Call-to-Action Button */}
-        <div className=' p-2 rounded-full w-max space-x-2'>
+        <div className='w-max space-x-2'>
           <Link
-            href="/about"
+            href={ROUTES.about}
             className="inline-block px-6 py-3 bg-primary text-light hover:text-dark font-semibold rounded-full hover:bg-secondary transition-all duration-300"
           >
             Learn More
           </Link>
           <Link
-            href="/about"
+            href='#contact-us'
             className="inline-block px-6 py-3 bg-secondary text-dark hover:text-light font-semibold rounded-full hover:bg-primary transition-all duration-300"
           >
             Get Involved
@@ -50,7 +51,7 @@ export function PageHero(
 ) {
   return (
     <motion.section
-      className="relative flex flex-col justify-center h-[320px] bg-cover bg-center text-white"
+      className="relative flex flex-col justify-center h-[400px] bg-cover bg-center text-white"
       style={{ backgroundImage: `url(${backgroundImage})` }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}

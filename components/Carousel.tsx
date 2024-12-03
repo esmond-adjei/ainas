@@ -11,6 +11,7 @@ import {
 
 // Minimal Swiper base styles (only what's absolutely necessary)
 import 'swiper/css/bundle';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface SwiperLayoutProps {
   children: ReactNode[];
@@ -72,26 +73,18 @@ export const SwiperLayout: React.FC<SwiperLayoutProps> = ({
       {navigation && (
         <>
           <button 
-            className="custom-prev-button absolute left-4 top-1/2 -translate-y-1/2 z-10 
-              bg-white/50 hover:bg-white/75 rounded-full p-2 
+            className="custom-prev-button absolute left-0 top-1/2 -translate-y-1/2 z-10 
+              bg-white/50 hover:bg-white hover:shadow-lg rounded-full p-2 
               disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
-              fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
-            >
-              <path d="m15 18-6-6 6-6"/>
-            </svg>
+            <ChevronLeft/>
           </button>
           <button 
-            className="custom-next-button absolute right-4 top-1/2 -translate-y-1/2 z-10 
-              bg-white/50 hover:bg-white/75 rounded-full p-2 
+            className="custom-next-button absolute right-0 top-1/2 -translate-y-1/2 z-10 
+              bg-white/50 hover:bg-white rounded-full p-2 
               disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
-              fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
-            >
-              <path d="m9 18 6-6-6-6"/>
-            </svg>
+            <ChevronRight/>
           </button>
         </>
       )}

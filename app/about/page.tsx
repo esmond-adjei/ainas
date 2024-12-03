@@ -9,7 +9,6 @@ import {
   BookOpen, 
   Award 
 } from 'lucide-react';
-import SwiperLayout from '@/components/Carousel';
 import { PageHero } from '../(home)/components/HeroSection';
 
 const AboutUsPage = () => {
@@ -74,25 +73,6 @@ const AboutUsPage = () => {
           </div>
         </div>
       </section>
-
-      <section className={sectionStyle}>
-      <SwiperLayout 
-      autoplay={true}
-      effect="slide"
-      navigation={true}
-      pagination={true}
-    >
-      <div className="bg-red-100 h-[200px] flex items-center justify-center">
-        Slide 1 Content
-      </div>
-      <div className="bg-blue-100 h-[200px] flex items-center justify-center">
-        Slide 2 Content
-      </div>
-      <div className="bg-green-100 h-[200px] flex items-center justify-center">
-        Slide 3 Content
-      </div>
-    </SwiperLayout>
-     </section>
 
       {/* Core Values Section */}
       <section className={`${sectionStyle} bg-secondary-color bg-opacity-10`}>

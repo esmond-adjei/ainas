@@ -12,18 +12,19 @@ interface ImpactAreaProps {
 
 const ImpactArea: React.FC<ImpactAreaProps> = ({ icon: Icon, title, description, imageSrc, className='' }) => {
   return (
-    <div
-      className={`p-4 bg-transparent rounded-lg ${className}`}>
+    <div className={`p-4 bg-transparent rounded-lg ${className}`}>
       {/* Left: Icon, Title, and Description */}
-      <div className="text-left lg:w-1/2 lg:mb-0">
-        <Icon className='text-4xl text-primary mb-4' size="40"/>
-        <h3 className="text-2xl font-semibold text-dark mb-4">{title}</h3>
+      <div className="text-left">
+        <div className='flex gap-2 items-center mb-2'>
+          <Icon className='text-4xl text-primary' size="30"/>
+          <h3 className="heading-2">{title}</h3>
+        </div>
         <p className="text-base text-gray-700">{description}</p>
       </div>
 
       {/* Right: Image */}
-      <div className="lg:w-1/2">
-        <img src={imageSrc} alt={title} className="w-full h-auto rounded-lg" />
+      <div className="">
+        <img src={imageSrc} alt={title} className="w-auto md:w-[480px] h-[320px] md:h-[400px] object-cover rounded-lg" />
       </div>
     </div>
   );

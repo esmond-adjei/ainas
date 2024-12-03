@@ -1,55 +1,68 @@
 'use client';
+import { Leaf, Users, Lightbulb } from 'lucide-react';
 
-import { motion } from 'framer-motion';
-import { Leaf, Globe, Lightbulb } from 'lucide-react';
-import InfoCard from '@/components/InfoCard';
+const values = [
+    {
+      icon: Leaf,
+      title: 'Sustainability',
+      description:
+        'We promote long-term solutions that ensure the health of both the environment and the communities we serve.',
+    },
+    {
+      icon: Users,
+      title: 'Inclusivity',
+      description:
+        'We embrace diversity and work towards equal opportunities, ensuring no community is left behind.',
+    },
+    {
+      icon: Lightbulb,
+      title: 'Innovation',
+      description:
+        'Leveraging technology and local knowledge, we design tailored solutions that tackle Africa’s unique challenges.',
+    },
+  ];
 
 export default function MissionSection() {
     return (
-        <motion.section
-            className="py-20 bg-gray-100 text-center"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-        >
+        <section className="py-20 px-10 bg-gray-100 flex flex-col-reverse lg:flex-row gap-10 lg:gap-6" >
+        {/* COMPLEMENTARY VIDEO */}
+        <div className='lg:w-1/2 hcc'>
+            <iframe
+            width="624"
+            height="351"
+            src="https://www.youtube.com/embed/13vFEtcv-8A?si=P1MCyR--r5NcJ0I4"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+            className="max-w-4xl mx-auto rounded-lg"
+            ></iframe>
+        </div>
             {/* Mission */}
             <div className="max-w-3xl mx-auto">
-                <h2 className="text-4xl font-semibold text-primary mb-6">Our Mission</h2>
+                <h2 className="text-4xl font-semibold mb-4">About Us</h2>
                 <p className="text-lg text-dark mb-8">
-                    At AINAS, we are committed to empowering both rural and urban African communities by implementing sustainable, nature-based solutions that enhance livelihoods, restore ecosystems, and build resilience against climate change.
+                At AINAS, our mission is to empower both rural and urban African communities by implementing sustainable, nature-based solutions that improve livelihoods, restore ecosystems, and enhance resilience to climate change. We are driven by a vision of a prosperous, inclusive, and sustainable Africa where every community can thrive.
                 </p>
-            </div>
 
-            {/* Values */}
-            <div className="flex flex-wrap justify-center gap-10">
-                <InfoCard
-                    icon={Leaf}
-                    iconSize="60"
-                    title="Sustainability"
-                >
-                    <p className="text-gray-600">
-                        We promote long-term solutions that ensure the health of both the environment and the communities we serve.
-                    </p>
-                </InfoCard>
-                <InfoCard
-                    icon={Globe}
-                    iconSize="60"
-                    title="Inclusivity"
-                >
-                    <p className="text-gray-600">
-                        We embrace diversity and work towards equal opportunities, ensuring no community is left behind.
-                    </p>
-                </InfoCard>
-                <InfoCard
-                    icon={Lightbulb}
-                    iconSize="60"
-                    title="Innovation"
-                >
-                    <p className="text-gray-600">
-                        Leveraging technology and local knowledge, we design tailored solutions that tackle Africa’s unique challenges.
-                    </p>
-                </InfoCard>
+                <div className='space-y-4'>
+                {values.map(({ icon: Icon, title, description }, index) => (
+                    <div
+                     className='text-left max-w-lg w-full flex gap-4' 
+                     key={index}
+                    >
+                    <div>
+                        <Icon className="text-primary" size="30"/>
+                    </div>
+                    <div>
+                        <h3 className="heading-2">{title}</h3>
+                        <p className="text-gray-600">{description}</p>
+                    </div>
+                    </div>
+                ))}
+                </div>
             </div>
-        </motion.section>
+        </section>
     );
 }

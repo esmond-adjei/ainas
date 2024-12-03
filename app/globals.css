@@ -56,3 +56,7 @@
 .info-message {
   @apply message text-sky-500 bg-sky-100;
 }
+
+.heading-2 {
+  @apply text-xl font-semibold text-dark mb-2;
+}

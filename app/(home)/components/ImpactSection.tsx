@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import ImpactArea from '@/components/ImpactArea';
 import { Camera, Users, Activity, Globe } from 'lucide-react';
+import SwiperLayout from '@/components/Carousel';
 
 const ImpactSection = () => {
   const impactAreas = [
@@ -33,37 +34,28 @@ const ImpactSection = () => {
   ];
 
   return (
-    <motion.section
-      className="bg-gray-100 py-20"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-    >
-      <div className="container mx-auto px-4 lg:px-8">
+    <section className="bg-gray-100 py-20">
+      <div className="container mx-auto px-4 lg:max-w-screen-xl">
         <h2 className="text-3xl font-semibold text-dark mb-8 text-center">Our Impact</h2>
-
-        <div className="space-y-8">
+          <SwiperLayout 
+          autoplay={true}
+          effect="slide"
+          navigation={true}
+          pagination={true}
+        >
           {impactAreas.map((area, index) => (
-            <motion.div
-              key={index}
-              initial={index % 2 === 0 ? { opacity: 0, x: -50 } : { opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 * (index + 1) }}
-            >
               <ImpactArea
+                key={index}
                 icon={area.icon}
                 title={area.title}
                 description={area.description}
                 imageSrc={area.imageSrc}
-                className={`flex flex-col lg:flex-row items-start justify-between gap-2 md:gap-8 ${index % 2 === 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'}`}
+                className={`flex flex-col lg:flex-row items-start justify-between gap-2 md:gap-8`}
               />
-            </motion.div>
-          ))}
-        </div>
+            ))}
+        </SwiperLayout>
       </div>
-    </motion.section>
+    </section>
   );
 };
 

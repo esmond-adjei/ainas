@@ -78,6 +78,11 @@ export function SignupForm() {
     
     const form = new FormData(event.currentTarget);
 
+    if (form.get("password") !== form.get("confirm-password")) {
+      setMessage({text: 'Password mismatched', type: 'warning'})
+      return;
+    }
+
     const res = await fetch("/api/auth/signup", {
       method: "POST",
       body: JSON.stringify({
@@ -107,18 +112,20 @@ export function SignupForm() {
         </div>
         {message.text && <AppMessage text={message.text} type={message.type}/> }
         <div className="flex gap-2">
-            <input
+          <input
              type="text"
              name="firstName"
              placeholder="First Name"
              className="input w-1/2"
-             />
-            <input
+             required={true}
+            />
+          <input
              type="text"
              name="lastName"
              placeholder="Last Name"
              className="input w-1/2"
-             />
+             required={true}
+            />
         </div>
 
         <input
@@ -126,18 +133,21 @@ export function SignupForm() {
           name="email"
           placeholder="Email"
           className="input"
+          required={true}
         />
         <input
           type="password"
           name="password"
           placeholder="Password"
           className="input"
+          required={true}
         />
         <input
           type="password"
           name="confirm-password"
           placeholder="Confirm Password"
           className="input"
+          required={true}
         />
         <button type="submit" className="submit-btn w-full">
           {

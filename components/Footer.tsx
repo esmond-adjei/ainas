@@ -18,7 +18,7 @@ export default function Footer() {
               AINAS
             </Link>
   
-            <p className="text-sm text-gray-300 max-w-xs">
+            <p className=" text-gray-300 max-w-xs">
               Empowering communities with sustainable, nature-based solutions for a greener tomorrow.
             </p>
 
@@ -42,7 +42,7 @@ export default function Footer() {
 
           {/* Contact Info Section */}
           <div className="space-y-4">
-            <h3 className="text-xl font-semibold mb-4">Contact</h3>
+            <h3 className="text-xl font-semibold mb-2">Contact</h3>
             <div className="space-y-5">
               <div className="flex">
                 <Mail className="text-primary mr-4" size={20} />
