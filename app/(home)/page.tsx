@@ -14,8 +14,11 @@ export default function Home() {
     <Impact/>
     <WhatWeDoSection/>
     <OurTeam/>
-    <GetInvolved/>
-    <ContactUs/>
+    
+    {/* <div className="bg-black flex gap-6 flex-col lg:flex-row"> */}
+      {/* <GetInvolved/> */}
+      <ContactUs/>
+    {/* </div> */}
     </>
   );
 }

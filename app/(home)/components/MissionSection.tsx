@@ -24,9 +24,9 @@ const values = [
 
 export default function MissionSection() {
     return (
-        <section className="py-20 px-10 bg-gray-100 flex flex-col-reverse lg:flex-row gap-10 lg:gap-6" >
+        <section className="section bg-gray-100 flex flex-col-reverse xl:flex-row gap-10 xl:gap-6" >
         {/* COMPLEMENTARY VIDEO */}
-        <div className='lg:w-1/2 hcc'>
+        <div className='xl:w-1/2 hcc'>
             <iframe
             width="624"
             height="351"

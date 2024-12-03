@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Sprout, Droplet, Sun, Building, Heart, Droplets } from 'lucide-react';
+import { Sprout, Sun, Building, Heart, Droplets } from 'lucide-react';
 import InfoCard from '@/components/InfoCard';
 
 const ActivitiesInfo = [
@@ -35,33 +35,33 @@ const ActivitiesInfo = [
 export default function WhatWeDoSection() {
     return (
         <motion.section
-            className="py-20 bg-white text-center"
+            className="section bg-white text-center"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
         >
             {/* Heading */}
             <div className="max-w-3xl mx-auto mb-16">
-                <h2 className="text-4xl font-semibold text-primary mb-6">What We Do</h2>
+                <h2 className="heading-1 text-primary">What We Do</h2>
                 <p className="text-lg text-dark">
-                    AINAS is dedicated to implementing nature-based solutions that address Africa’s environmental and social challenges. Below are the key areas where we focus our efforts:
+                    We are dedicated to implementing nature-based solutions that address Africa's environmental and social challenges. Below are the key areas where we focus our efforts:
                 </p>
             </div>
 
             {/* Service Cards */}
-            <div className="flex flex-wrap justify-center gap-10">
+            <div 
+                style={{"--min-grid-item-width": "400px"} as React.CSSProperties} 
+                className="grid-container"
+                >
                 {
-                    ActivitiesInfo.map(
-                        (act, index) => 
+                    ActivitiesInfo.map((act, index) => 
                         <InfoCard
                             key={index}
                             icon={act.icon}
                             title={act.title}
-                            className='border border-gray-200 rounded-lg p-6'
+                            className=' border border-gray-200 rounded-lg p-6'
                         >
-                            <p className='text-gray-600'>
-                                {act.text}
-                            </p>
+                            <p className='text-gray-600'>{act.text}</p>
                         </InfoCard>
                     )
                 }

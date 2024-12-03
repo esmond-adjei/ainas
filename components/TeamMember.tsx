@@ -94,15 +94,15 @@ const TeamMember: React.FC<TeamMemberProps> = ({ imageSrc, name, title, bio }) =
 
   return (
     <>
-      <div className="mb-8 rounded-lg overflow-hidden transition-transform transform hover:scale-[98%]">
-        {/* Team Member Card */}
-        <div className="relative cursor-pointer" onClick={toggleModal}>
-          <img src={imageSrc} alt={name} className="w-[400px] h-[400px] object-cover" />
+      <div 
+        className="bg-gray-200 relative cursor-pointer w-[300px] h-[400px]" 
+        onClick={toggleModal}
+        style={{backgroundImage: `url(${imageSrc})`}}
+      >
           <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent py-4 px-6">
-            <h3 className="text-white text-xl font-semibold">{name}</h3>
+            <h3 className="text-white font-semibold">{name}</h3>
             <p className="text-light text-sm">{title}</p>
           </div>
-        </div>
       </div>
 
       {/* Modal for Detailed Info */}
