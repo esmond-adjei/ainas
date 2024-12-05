@@ -26,7 +26,7 @@ export default function Hero() {
         </p>
 
         {/* Call-to-Action Button */}
-        <div className='w-max space-x-2'>
+        <div className='w-max space-x-2 rounded-full bg-white/50 p-2 backdrop-blur-md'>
           <Link
             href={ROUTES.about}
             className="inline-block px-6 py-3 bg-primary text-light hover:text-dark font-semibold rounded-full hover:bg-secondary transition-all duration-300"
@@ -35,7 +35,7 @@ export default function Hero() {
           </Link>
           <Link
             href='#contact-us'
-            className="inline-block px-6 py-3 bg-secondary text-dark hover:text-light font-semibold rounded-full hover:bg-primary transition-all duration-300"
+            className="inline-block px-6 py-3 text-dark hover:text-light font-semibold rounded-full transition-all duration-300"
           >
             Get Involved
           </Link>

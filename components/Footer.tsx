@@ -4,7 +4,7 @@ import CustomIcon from './CustomIcon';
 
 export default function Footer() {
   return (
-    <footer className="bg-dark text-light pt-16 mt-20">
+    <footer className="bg-dark text-light pt-16">
       <div className="container mx-auto px-4 space-y-8">
 
 

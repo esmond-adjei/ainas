@@ -33,7 +33,13 @@ const involvementOptions = [
 
 const ContactUs = () => {
   return (
-    <section id="contact-us" className="section bg-gray-100 flex flex-col-reverse gap-6 xl:flex-row items-start justify-center">
+    <section 
+        id="contact-us" 
+        className="section bg-gray-100 bg-cover bg-fixed flex flex-col-reverse gap-6 xl:flex-row items-start justify-center"
+        style={{
+            backgroundImage: `url(/pattern-randomized-light.svg)`,
+        }}
+    >
         {/* Contact Info Block */}
         <div className="xl:w-1/2 w-full hcc">
             <div>
@@ -110,7 +116,7 @@ const ContactUs = () => {
                     icon={icon}
                     title={title}
                     iconSize="30"
-                    className="bg-white w-full p-4 hover:bg-secondary rounded-lg transition-colors duration-100"
+                    className="bg-gray-100 shadow w-full p-4 hover:bg-secondary rounded-lg transition-colors duration-100"
                 >
                     <p className="text-gray-700 text-sm">{description}</p>
                 </InfoCard>

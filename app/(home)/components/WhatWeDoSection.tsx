@@ -35,11 +35,22 @@ const ActivitiesInfo = [
 export default function WhatWeDoSection() {
     return (
         <motion.section
-            className="section bg-white text-center"
+            className="section relative bg-white text-center"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
         >
+
+        {/* <img 
+            className='size-40 hidden lg:block absolute bottom-[40px] left-0 transform -translate-x-1/2 -translate-y-1/2'
+            src='cross-circle-bloat.svg'
+            />
+        <img 
+            className='size-40 hidden lg:block absolute top-[40px] right-0 transform -translate-x-1/2 -translate-y-1/2'
+            src='mix-circle-half.svg'
+            /> */}
+
             {/* Heading */}
             <div className="max-w-3xl mx-auto mb-16">
                 <h2 className="heading-1 text-primary">What We Do</h2>

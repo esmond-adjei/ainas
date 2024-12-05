@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ChevronDown, ChevronUp, Menu, X } from 'lucide-react';
 import CustomIcon from './CustomIcon';
-import { ROUTES } from '@/lib';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -22,19 +21,13 @@ export default function Navbar() {
 
   return (
     <motion.header
-      className={`fixed top-0 z-40 w-full transition-all duration-200 ${
+      className={`fixed hcb flex-wrap top-0 z-40 w-full p-4 lg:px-10 transition-all duration-200 ${
         isScrolled ? 'bg-white shadow-sm text-dark' : 'bg-transparent text-light'
       }`}
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
-      <motion.nav
-        initial={{ x: -50, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.1 }}
-        className="w-full flex items-center justify-between p-4 lg:px-10"
-      >
         {/* Logo */}
         <div>
           <Link
@@ -52,19 +45,22 @@ export default function Navbar() {
             AINAS
           </Link>
         </div>
+      {/* <nav className="w-full hcb"> */}
 
-        <div className='relative flex gap-4 flex-row-reverse md:flex-row'>
+        {/* <div className='relative flex gap-4 flex-row-reverse md:flex-row'> */}
           <NavMenu isScrolled={isScrolled}/>
           
+          {/* <NavIcon3/> */}
+
           {/* Donate Button */}
-          <Link
+          {/* <Link
             href="/donate"
             className="bg-primary text-light px-4 py-2 rounded-full hover:bg-secondary hover:text-dark transition"
           >
             Donate
-          </Link>
-        </div>
-      </motion.nav>
+          </Link> */}
+        {/* </div> */}
+      {/* </nav> */}
     </motion.header>
   );
 }
@@ -99,9 +95,6 @@ const NavMenu: React.FC<{isScrolled: boolean}> = ({isScrolled}) => {
         <button
           className={`block md:hidden ${
             isScrolled ? 'text-dark' : 'text-light'
-          } 
-          ${
-            mobileMenuOpen ? 'absolute z-40 text-black' : ''
           }`}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
@@ -114,9 +107,9 @@ const NavMenu: React.FC<{isScrolled: boolean}> = ({isScrolled}) => {
           ref={menuRef}
           className={`${
               mobileMenuOpen ?
-               'hcc flex-col w-max text-dark bg-slate-200 p-8 rounded-md shadow-lg absolute top-0'
+               'flex'
                : 'hidden'
-            } md:flex items-center gap-6`}
+            } w-full flex flex-col px-10 py-4 space-y-4 bg-white/60 backdrop-blur-lg rounded-md`}
           >
             <Link href="/" className="menu-item">
               Home
@@ -237,3 +230,42 @@ const DropDownMenuItem: React.FC<DropDownMenuItemProps> = ({
   </div>
   )
 }
+
+
+const NavIcon3: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  return (
+    <div
+      className={`nav-icon relative w-12 h-10 cursor-pointer ${
+        isOpen ? "open" : ""
+      } transition-all`}
+      onClick={toggleMenu}
+    >
+      <span
+        className={` ${
+          isOpen ? "top-4 left-1/2 w-0 transform -translate-x-1/2" : "top-0"
+        }`}
+      ></span>
+      <span
+        className={` ${
+          isOpen ? "transform rotate-45" : "top-4"
+        }`}
+      ></span>
+      <span
+        className={` ${
+          isOpen ? "transform -rotate-45" : "top-4"
+        }`}
+      ></span>
+      <span
+        className={` ${
+          isOpen ? "top-4 left-1/2 w-0 transform -translate-x-1/2" : "top-8"
+        }`}
+      ></span>
+    </div>
+  );
+};

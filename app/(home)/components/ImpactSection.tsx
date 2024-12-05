@@ -32,7 +32,11 @@ const ImpactSection = () => {
   ];
 
   return (
-    <section className="section bg-primaryDark text-light">
+    <section className="section bg-primaryDark bg-cover text-light"
+    style={{
+      backgroundImage: `url(/cornered-stairs.svg)`
+    }}
+    >
       <div className="container mx-auto px-4 lg:max-w-screen-xl">
         <h2 className="heading-1 text-center">Our Impact</h2>
 
@@ -41,6 +45,7 @@ const ImpactSection = () => {
           effect="slide"
           navigation={true}
           pagination={true}
+          className='bg-primaryDark rounded-lg shadow-lg'
         >
           {impactAreas.map((area, index) => (
               <ImpactArea
@@ -76,11 +81,9 @@ const ImpactArea: React.FC<ImpactAreaProps> = ({ icon: Icon, title, description,
   return (
     <div className={`p-4 m-4 rounded-lg ${className}`}>
       {/* Left: Icon, Title, and Description */}
-      <div className="text-left max-w-xl mx-auto">
-        <div className='flex gap-2 items-center mb-2'>
-          <Icon className='text-4xl text-primaryBright' size="30"/>
-          <h3 className="heading-2">{title}</h3>
-        </div>
+      <div className="text-left max-w-xl mx-auto py-6">
+        <Icon className='text-primaryBright mb-4' size="40"/>
+        <h3 className="heading-2">{title}</h3>
         <p className="text-base text-slate-400">{description}</p>
       </div>
 
