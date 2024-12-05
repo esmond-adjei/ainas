@@ -8,13 +8,18 @@
   --primary-color: #3B7A57;
   --primary-color-dark: #072615;
   --primary-color-bright: #0BEA6F;
+  --primary-color-light: #a1efc4;
   --secondary-color: #f5e1a4;
-
-  --min-grid-item-width: 300px;
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+@layer base {
+  p {
+    @apply text-gray-800;
+  }
 }
 
 .nav-link {
@@ -45,7 +50,10 @@ html {
 }
 
 .menu-item {
-  @apply hover:text-primary transition;
+  @apply  w-full text-dark cursor-pointer text-nowrap px-4 py-2 rounded-md transition duration-200 ease-linear;
+  &:hover {
+    @apply bg-primaryLight;
+  }
 }
 
 .message {
@@ -78,6 +86,7 @@ html {
 }
 
 .grid-container {
+  --min-grid-item-width: 300px;
   @apply max-w-screen-xl mx-auto grid gap-4 grid-cols-[repeat(auto-fill,minmax(var(--min-grid-item-width),1fr))] justify-items-center;
 }
 
@@ -98,5 +107,48 @@ html {
   }
   .nav-icon.open span:nth-child(3) {
     @apply transform -rotate-45;
+  }
+}
+
+.drawer {
+  --animation-duration: 300ms;
+  --drawer-height-final: 100px;
+  --drawer-height-initial: 0;
+  display: none;
+  overflow: hidden;
+  max-height: fit-content;
+}
+.drawer[aria-expanded=true] {
+  display: block;
+  animation: open-drawer var(--animation-duration) ease;
+}
+
+.drawer[aria-expanded=false] {
+  animation: close-drawer var(--animation-duration) ease;
+}
+
+@keyframes open-drawer {
+  0% {
+    height: var(--drawer-height-initial);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    height: var(--drawer-height-final);
+  }
+}
+
+@keyframes close-drawer {
+  0% {
+    display: block;
+    height: var(--drawer-height-final);
+  }
+  100% {
+    height: var(--drawer-height-initial);
+    display: none;
   }
 }

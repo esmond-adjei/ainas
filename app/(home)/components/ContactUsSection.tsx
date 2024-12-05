@@ -48,7 +48,7 @@ const ContactUs = () => {
                 <p className="text-lg text-center mb-8">Send Us a Message</p>
 
                 {/* Contact Form */}     
-                <form action="#" method="POST" className="form-container w-[500px]">
+                <form action="#" method="POST" className="form-container min-w-[300px]">
                 <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 mb-6">
                     <div>
                     <label htmlFor="name" className="block text-gray-700 text-sm">Name</label>

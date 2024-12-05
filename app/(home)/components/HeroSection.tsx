@@ -62,7 +62,7 @@ export function PageHero(
 
       {/* Content */}
       <div className="relative z-10 px-4 container mx-auto">
-        <h1 className="text-3xl md:text-4xl font-heading font-bold text-white text-center mb-6">
+        <h1 className="text-4xl md:text-4xl font-heading font-bold text-white text-center mb-6">
           {title}
         </h1>
         {

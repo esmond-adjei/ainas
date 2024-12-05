@@ -1,8 +1,8 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { Sprout, Sun, Building, Heart, Droplets } from 'lucide-react';
 import InfoCard from '@/components/InfoCard';
+import AnimatedSection from '@/components/AnimatedSection';
 
 const ActivitiesInfo = [
     {
@@ -34,13 +34,7 @@ const ActivitiesInfo = [
 
 export default function WhatWeDoSection() {
     return (
-        <motion.section
-            className="section relative bg-white text-center"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-        >
+        <AnimatedSection className="section relative bg-white text-center">
 
         {/* <img 
             className='size-40 hidden lg:block absolute bottom-[40px] left-0 transform -translate-x-1/2 -translate-y-1/2'
@@ -60,23 +54,19 @@ export default function WhatWeDoSection() {
             </div>
 
             {/* Service Cards */}
-            <div 
-                style={{"--min-grid-item-width": "400px"} as React.CSSProperties} 
-                className="grid-container"
-                >
-                {
-                    ActivitiesInfo.map((act, index) => 
-                        <InfoCard
-                            key={index}
-                            icon={act.icon}
-                            title={act.title}
-                            className=' border border-gray-200 rounded-lg p-6'
-                        >
-                            <p className='text-gray-600'>{act.text}</p>
-                        </InfoCard>
-                    )
-                }
+            <div className="grid-container">
+            {
+                ActivitiesInfo.map((act, index) => 
+                  <InfoCard
+                    key={index}
+                    icon={act.icon}
+                    title={act.title}
+                    className='border border-gray-200 rounded-lg p-6'
+                  ><p className='text-gray-600'>{act.text}</p>
+                 </InfoCard>
+                )
+            }
             </div>
-        </motion.section>
+        </AnimatedSection>
     );
 }
