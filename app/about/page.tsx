@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { 
   Globe, 
   Users, 
@@ -7,11 +7,14 @@ import {
   Shield, 
   TreePine, 
   BookOpen, 
-  Award 
+  Award,
+  ChevronRight
 } from 'lucide-react';
 import { PageHero } from '../(home)/components/HeroSection';
 import { ExpandableSection } from '@/components/ExpandableSection';
-import SiteLoader from '../loading';
+import Section from '@/components/SectionLayout';
+import Link from 'next/link';
+import { ROUTES } from '@/lib';
 
 
 interface CoreValueCardProps {
@@ -76,18 +79,6 @@ const LeadershipProfile: React.FC<LeadershipProfileProps> = ({
     <h4 className="text-lg text-foreground mb-3">{role}</h4>
     <p className="text-foreground">{description}</p>
   </div>
-);
-
-const Section: React.FC<{
-  title?: string; 
-  children: ReactNode
-}> = ({ title, children }) => (
-  <section className='section !py-10'>
-    <div className="max-w-4xl mx-auto">
-      {title && <h2 className='heading-1 mb-4'>{title}</h2>}
-      {children}
-    </div>
-  </section>
 );
 
 const AboutUsPage: React.FC = () => {
@@ -164,18 +155,12 @@ const AboutUsPage: React.FC = () => {
       </Section>
 
       {/* Leadership Highlights */}
-      <Section title="Leadership Highlights">
-        <div className="grid md:grid-cols-2 gap-6">
-          <LeadershipProfile 
-            name="Dr. Caleb Melenya Ocansey"
-            role="Founder and Strategic Visionary"
-            description="Instrumental in founding AINAS, Dr. Ocansey has been pivotal in shaping the organization's strategic direction and commitment to sustainable development."
-          />
-          <LeadershipProfile 
-            name="Executive Leadership Team"
-            role="Multidisciplinary Governance"
-            description="Our leadership comprises experts in research, technology, environmental sustainability, policy advocacy, and community development, ensuring a comprehensive approach to our mission."
-          />
+      <Section>
+        <div className='w-full h-[200px] hcc rounded-3xl bg-green-50'>
+          <Link
+            href={ROUTES.team}
+            className='hcc gap-0 hover:gap-4 p-4 rounded-full bg-primaryBright text-2xl text-primary transition-all duration-200'
+          >Check Out Our Team <ChevronRight size={30}/></Link>
         </div>
       </Section>
 

@@ -1,8 +1,10 @@
 'use client';
 
-import { Sprout, Sun, Building, Heart, Droplets } from 'lucide-react';
+import { Sprout, Sun, Building, Heart, Droplets, ChevronRight } from 'lucide-react';
 import InfoCard from '@/components/InfoCard';
 import AnimatedSection from '@/components/AnimatedSection';
+import { ROUTES } from '@/lib';
+import Link from 'next/link';
 
 const ActivitiesInfo = [
     {
@@ -34,7 +36,7 @@ const ActivitiesInfo = [
 
 export default function WhatWeDoSection() {
     return (
-        <AnimatedSection className="section relative bg-white text-center">
+        <AnimatedSection className="section relative bg-white text-center space-y-4">
 
         {/* <img 
             className='size-40 hidden lg:block absolute bottom-[40px] left-0 transform -translate-x-1/2 -translate-y-1/2'
@@ -46,12 +48,19 @@ export default function WhatWeDoSection() {
             /> */}
 
             {/* Heading */}
-            <div className="max-w-3xl mx-auto mb-16">
+            <div className="max-w-3xl mx-auto">
                 <h2 className="heading-1 text-primary">What We Do</h2>
                 <p className="text-lg text-dark">
                     We are dedicated to implementing nature-based solutions that address Africa's environmental and social challenges. Below are the key areas where we focus our efforts:
                 </p>
             </div>
+
+            <Link
+              href={ROUTES.about}
+              className='mx-auto w-max hcc gap-0 hover:gap-4 px-4 py-2 rounded-full bg-green-200 text-primary transition-all duration-200'
+            >
+                More About Us <ChevronRight size={24}/>
+            </Link>
 
             {/* Service Cards */}
             <div className="grid-container">

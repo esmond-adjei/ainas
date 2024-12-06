@@ -10,6 +10,7 @@ interface TeamMemberProps {
   name: string;
   title: string;
   bio: string;
+  showSummary?: boolean;
 }
 
 interface TeamMemberOverlayProps extends TeamMemberProps {
@@ -85,7 +86,7 @@ const TeamMemberOverlay: React.FC<TeamMemberOverlayProps> = ({
   );
 };
 
-const TeamMember: React.FC<TeamMemberProps> = ({ imageSrc, name, title, bio }) => {
+const TeamMember: React.FC<TeamMemberProps> = ({ imageSrc, name, title, bio, showSummary=true }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const toggleModal = () => {
@@ -106,14 +107,18 @@ const TeamMember: React.FC<TeamMemberProps> = ({ imageSrc, name, title, bio }) =
       </div>
 
       {/* Modal for Detailed Info */}
-      <TeamMemberOverlay 
-        openModal={isModalOpen} 
-        setOpenedModal={setIsModalOpen} 
-        imageSrc={imageSrc} 
-        name={name} 
-        title={title} 
-        bio={bio} 
-       />
+      {
+        showSummary && (
+          <TeamMemberOverlay 
+            openModal={isModalOpen} 
+            setOpenedModal={setIsModalOpen} 
+            imageSrc={imageSrc} 
+            name={name} 
+            title={title} 
+            bio={bio} 
+          />
+        )
+      }
     </>
   );
 };

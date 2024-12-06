@@ -9,6 +9,7 @@ export default function Hero() {
     <motion.section
       className="relative flex flex-col justify-center h-[720px] bg-cover bg-center text-white"
       style={{ backgroundImage: `url('/images/hero-bg.jpg')` }}
+      
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
@@ -17,7 +18,13 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black bg-opacity-70"></div>
 
       {/* Content */}
-      <div className="relative z-10 px-4 max-w-4xl mx-auto">
+      <motion.div 
+        className="relative z-10 px-4 max-w-4xl mx-auto"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 1 }}
+        viewport={{ once: true }}
+      >
         <h1 className="text-5xl md:text-6xl font-heading font-bold text-white mb-6 drop-shadow-lg">
         Promoting Sustainable Development of Africa
         </h1>
@@ -29,18 +36,18 @@ export default function Hero() {
         <div className='w-max space-x-2 rounded-full bg-white/50 p-2 backdrop-blur-md'>
           <Link
             href={ROUTES.about}
-            className="inline-block px-6 py-3 bg-primary text-light hover:text-dark font-semibold rounded-full hover:bg-secondary transition-all duration-300"
+            className="inline-block active:scale-95 px-6 py-3 bg-primary text-light hover:text-dark font-semibold rounded-full hover:bg-secondary transition-all duration-300"
           >
             Learn More
           </Link>
           <Link
             href='#contact-us'
-            className="inline-block px-6 py-3 text-dark hover:text-light font-semibold rounded-full transition-all duration-300"
+            className="inline-block active:scale-95 px-6 py-3 text-dark hover:text-light font-semibold rounded-full transition-all duration-300"
           >
             Get Involved
           </Link>
         </div>
-      </div>
+      </motion.div>
     </motion.section>
   );
 }

@@ -50,9 +50,16 @@ html {
 }
 
 .menu-item {
-  @apply  w-full text-dark cursor-pointer text-nowrap px-4 py-2 rounded-md transition duration-200 ease-linear;
+  @apply  w-full text-dark cursor-pointer text-nowrap px-4 py-2 rounded-md transition-all duration-200 ease-linear;
   &:hover {
     @apply bg-primaryLight;
+  }
+  &:active {
+    @apply scale-95;
+  }
+
+  &.active {
+    @apply !text-primaryBright;
   }
 }
 
