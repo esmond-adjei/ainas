@@ -22,7 +22,7 @@ export default function Hero() {
         className="relative z-10 px-4 max-w-4xl mx-auto"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 1 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
         viewport={{ once: true }}
       >
         <h1 className="text-5xl md:text-6xl font-heading font-bold text-white mb-6 drop-shadow-lg">
