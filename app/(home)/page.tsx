@@ -1,5 +1,4 @@
 import ContactUs from "./components/ContactUsSection";
-import GetInvolved from "./components/GetInvolvedSection";
 import HeroSection from "./components/HeroSection";
 import Impact from "./components/ImpactSection";
 import Mission from "./components/MissionSection";
@@ -16,11 +15,7 @@ export default function Home() {
     <Impact/>
     <WhatWeDoSection/>
     <OurTeam/>
-    
-    {/* <div className="bg-black flex gap-6 flex-col lg:flex-row"> */}
-      {/* <GetInvolved/> */}
-      <ContactUs/>
-    {/* </div> */}
+    <ContactUs/>
     </>
   );
 }
