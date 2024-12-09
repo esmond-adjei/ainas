@@ -1,7 +1,5 @@
 export const ROUTES = {
     home: '/',
-    login: '/login',
-    signup: '/signup',
     about: '/about',
 
     team: '/team',
@@ -10,5 +8,4 @@ export const ROUTES = {
     initiatives: '/initiatives',
     blog: '/blog',
     report: '/report',
-
 }
