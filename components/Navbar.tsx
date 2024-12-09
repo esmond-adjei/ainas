@@ -68,7 +68,7 @@ const DropDownMenuItem: React.FC<DropDownMenuItemProps> = ({
   );
 };
 
-const NavMenu: React.FC<{ isScrolled: boolean }> = ({ isScrolled }) => {
+const NavMenu: React.FC<{ isScrolled: boolean, isActive: (route: string) => {} }> = ({ isScrolled,isActive }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
@@ -82,6 +82,10 @@ const NavMenu: React.FC<{ isScrolled: boolean }> = ({ isScrolled }) => {
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
+
+  const navTheme = `menu-item hover:!text-dark ${
+    isScrolled ? '!text-dark' : '!text-light'
+  }`;
 
   return (
     <>
@@ -113,54 +117,51 @@ const NavMenu: React.FC<{ isScrolled: boolean }> = ({ isScrolled }) => {
             Home
           </Link>
 
-          <ExpandableSection 
-            title="About Us" 
-            variant="dropdown" 
-            className="menu-item !m-0 !border-none"
-          >
-            <Link
-              href={ROUTES.contact}
-              className="block px-4 py-2 hover:bg-gray-200"
-              role="menuitem"
-            >
-              About Us
-            </Link>
-            <Link
-              href="/team"
-              className="block px-4 py-2 hover:bg-gray-200"
-              role="menuitem"
-            >
-              Our Team
-            </Link>
-            <Link
-              href={ROUTES.contact}
-              className="block px-4 py-2 hover:bg-gray-200"
-              role="menuitem"
-            >
-              Contact Us
-            </Link>
-          </ExpandableSection>
+          <Link href={ROUTES.about} className={isActive(ROUTES.about) ? `menu-item active`: `menu-item` }>
+          About Us
+        </Link>
 
+        <Link href={ROUTES.team} className={isActive(ROUTES.team) ? `menu-item active`: `menu-item` }>
+          Our Team
+        </Link>
+
+        <br />
           <ExpandableSection 
             title="Explore" 
             variant="dropdown" 
             className="menu-item !m-0 !border-none"
           >
             <Link
-              href={ROUTES.impact}
-              className="block px-4 py-2 hover:bg-gray-200"
-              role="menuitem"
-            >
-              Our Impact
-            </Link>
-            <Link
-              href={ROUTES.blog}
-              className="block px-4 py-2 hover:bg-gray-200"
-              role="menuitem"
-            >
-              Blog
-            </Link>
+            href={ROUTES.contact}
+            className="block px-4 py-2 hover:bg-gray-200"
+            role="menuitem"
+          >
+            Contact Us
+          </Link>
+
+          <Link
+            href={ROUTES.impact}
+            className="block px-4 py-2 hover:bg-gray-200"
+            role="menuitem"
+          >
+            Our Impact
+          </Link>
+          <Link
+            href={ROUTES.report}
+            className="block px-4 py-2 hover:bg-gray-200"
+            role="menuitem"
+          >
+            Reports
+          </Link>
+          <Link
+            href={ROUTES.blog}
+            className="block px-4 py-2 hover:bg-gray-200"
+            role="menuitem"
+          >
+            Blog
+          </Link>
           </ExpandableSection>
+
 
           <Link 
             href="#contact-us" 
@@ -277,7 +278,7 @@ export default function Navbar() {
         </Link>
       </div>
 
-      <NavMenu isScrolled={isScrolled} />
+      <NavMenu isScrolled={isScrolled} isActive={isActive} />
     </motion.header>
   );
 }
