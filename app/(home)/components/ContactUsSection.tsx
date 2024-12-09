@@ -116,7 +116,7 @@ const ContactUs = () => {
                     icon={icon}
                     title={title}
                     iconSize="30"
-                    className="bg-gray-100 shadow w-full p-4 hover:bg-secondary rounded-lg transition-colors duration-100"
+                    className="bg-white shadow w-full p-4 hover:bg-secondary rounded-lg transition-colors duration-100"
                 >
                     <p className="text-gray-700 text-sm">{description}</p>
                 </InfoCard>

@@ -40,7 +40,7 @@ const TeamPage = () => {
         <ListPageLayout
             title="Meet Our Team"
             subtitle="A passionate group of professionals dedicated to driving positive change across Africa through sustainable solutions."
-            bannerImage="/images/team-banner.jpg"
+            bannerImage="/images/team-banner.webp"
         >
             {
             teamMembers.map((member, index) => (

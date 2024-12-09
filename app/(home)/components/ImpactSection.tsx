@@ -9,25 +9,25 @@ const ImpactSection = () => {
       icon: Camera,
       title: 'Visual Impact',
       description: 'Our solutions create beautiful and sustainable landscapes that enhance the visual appeal of any environment.',
-      imageSrc: '/images/visual-impact.jpg'
+      imageSrc: '/images/visual-impact.webp'
     },
     {
       icon: Users,
       title: 'Community Impact',
       description: 'By involving local communities, we ensure our solutions create positive social and economic impacts.',
-      imageSrc: '/images/community-impact.jpg'
+      imageSrc: '/images/community-impact.webp'
     },
     {
       icon: Activity,
       title: 'Ecological Impact',
       description: 'Our nature-based approaches restore and protect ecosystems, promoting biodiversity and environmental health.',
-      imageSrc: '/images/ecological-impact.jpg'
+      imageSrc: '/images/ecological-impact.webp'
     },
     {
       icon: Globe,
       title: 'Global Impact',
       description: 'We implement our solutions worldwide, contributing to global sustainability and climate change mitigation efforts.',
-      imageSrc: '/images/global-impact.jpg'
+      imageSrc: '/images/global-impact.webp'
     }
   ];
 

@@ -96,7 +96,7 @@ const TeamMember: React.FC<TeamMemberProps> = ({ imageSrc, name, title, bio, sho
   return (
     <>
       <div 
-        className="bg-gray-200 relative cursor-pointer w-[300px] h-[400px]" 
+        className="bg-gray-200 relative cursor-pointer w-[300px] h-[400px] hover:shadow-2xl hover:-translate-y-2 transition-all duration-200" 
         onClick={toggleModal}
         style={{backgroundImage: `url(${imageSrc})`}}
       >

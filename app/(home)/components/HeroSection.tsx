@@ -8,7 +8,7 @@ export default function Hero() {
   return (
     <motion.section
       className="relative flex flex-col justify-center h-[720px] bg-cover bg-center text-white"
-      style={{ backgroundImage: `url('/images/hero-bg.jpg')` }}
+      style={{ backgroundImage: `url('/images/hero-bg.webp')` }}
       
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}

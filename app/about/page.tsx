@@ -86,7 +86,7 @@ const AboutUsPage: React.FC = () => {
     <div className="bg-background text-foreground">
       <PageHero 
         title='About Us'
-        backgroundImage='/images/visual-impact.jpg'
+        backgroundImage='/images/visual-impact.webp'
       />
 
       {/* Vision and Mission Section */}

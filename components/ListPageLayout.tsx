@@ -7,7 +7,7 @@ import Section from "./SectionLayout";
 export default function ListPageLayout({
   title,
   subtitle,
-  bannerImage = '/images/visual-impact.jpg',
+  bannerImage = '/images/visual-impact.webp',
   children,
 }: Readonly<{
     title: string;
