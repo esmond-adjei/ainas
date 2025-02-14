@@ -19,16 +19,16 @@ export default function Hero() {
 
       {/* Content */}
       <motion.div 
-        className="relative z-10 px-4 max-w-4xl mx-auto"
+        className="relative z-10 px-4 max-w-3xl mx-auto"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
         viewport={{ once: true }}
       >
-        <h1 className="text-5xl md:text-6xl font-heading font-bold text-white mb-6 drop-shadow-lg">
+        <h1 className="text-6xl md:text-7xl font-serif font-bold text-white mb-6 drop-shadow-lg">
         Promoting Sustainable Development of Africa
         </h1>
-        <p className="text-lg md:text-xl text-light mb-8">
+        <p className="text-xl font-serif font-thin md:text-2xl text-light mb-8">
           Empowering African communities with sustainable, nature-based solutions for a greener and more prosperous future.
         </p>
 

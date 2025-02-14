@@ -84,12 +84,12 @@ const ImpactArea: React.FC<ImpactAreaProps> = ({ icon: Icon, title, description,
       <div className="text-left max-w-xl mx-auto py-6">
         <Icon className='text-primaryBright mb-4' size="40"/>
         <h3 className="heading-2">{title}</h3>
-        <p className="text-base text-slate-400">{description}</p>
+        <p className="text-base text-slate-400 mt-2">{description}</p>
       </div>
 
       {/* Right: Image */}
       <div className="mx-auto">
-        <img src={imageSrc} alt={title} className="w-auto xl:max-w-screen-sm h-[320px] xl:h-[400px] object-cover rounded-lg" />
+        <img src={imageSrc} alt={title} className="max-w-full xl:max-w-screen-sm h-[320px] xl:h-[380px] object-cover rounded-lg" />
       </div>
     </div>
   );

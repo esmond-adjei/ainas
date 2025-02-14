@@ -35,8 +35,8 @@ export default function OurTeam() {
   return (
     <AnimatedSection className="section bg-gray-100 text-center space-y-4">
       <div className="max-w-3xl mx-auto">
-        <h2 className="text-4xl font-semibold text-primary mb-6">Meet Our Team</h2>
-        <p className="text-lg text-dark">
+        <h2 className="heading-1 text-primary">Meet Our Team</h2>
+        <p className="heading-3 text-dark">
           A passionate group of professionals dedicated to driving positive change across Africa through sustainable solutions.
         </p>
       </div>

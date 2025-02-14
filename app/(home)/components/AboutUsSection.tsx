@@ -22,9 +22,9 @@ const values = [
     },
   ];
 
-export default function MissionSection() {
+export default function AboutUs() {
     return (
-        <section className="section bg-gray-100 flex flex-col-reverse xl:flex-row gap-10 xl:gap-6" >
+        <section className="section bg-gray-100 flex flex-col-reverse xl:flex-row gap-10" >
         {/* COMPLEMENTARY VIDEO */}
         <div className='xl:w-1/2 hcc'>
             <iframe
@@ -41,8 +41,8 @@ export default function MissionSection() {
         </div>
             {/* Mission */}
             <div className="max-w-3xl mx-auto">
-                <h2 className="text-4xl font-semibold mb-4">About Us</h2>
-                <p className="text-lg text-dark mb-8">
+                <h2 className="heading-1">About Us</h2>
+                <p className="font-serif text-xl text-dark mb-8">
                 At AINAS, our mission is to empower both rural and urban African communities by implementing sustainable, nature-based solutions that improve livelihoods, restore ecosystems, and enhance resilience to climate change. We are driven by a vision of a prosperous, inclusive, and sustainable Africa where every community can thrive.
                 </p>
 

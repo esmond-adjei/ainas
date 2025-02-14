@@ -36,7 +36,7 @@ export const ExpandableSection: React.FC<ExpandableSectionProps> = ({
             {title}
           </h2>
         ) : (
-          <p className="text-dark">{title}</p>
+          <p className="font-sans text-dark">{title}</p>
         )}
 
         {/* icon */}

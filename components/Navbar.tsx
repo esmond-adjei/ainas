@@ -206,7 +206,7 @@ export default function Navbar() {
       <div>
         <Link
           href="/"
-          className={`text-2xl font-heading font-bold ${
+          className={`text-3xl font-heading font-bold font-serif ${
             isScrolled ? 'text-primary' : 'text-light'
           }`}
         >

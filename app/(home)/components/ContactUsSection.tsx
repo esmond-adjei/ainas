@@ -41,14 +41,13 @@ const ContactUs = () => {
         }}
     >
         {/* Contact Info Block */}
-        <div className="xl:w-1/2 w-full hcc">
+        <div className="w-full xl:hcc xl:w-1/2">
             <div>
-            
                 <h2 className="heading-1 text-center">Contact Us</h2>
-                <p className="text-lg text-center mb-8">Send Us a Message</p>
+                <p className="heading-3 text-center mb-4 xl:mb-8">Send Us a Message</p>
 
                 {/* Contact Form */}     
-                <form action="#" method="POST" className="form-container min-w-[300px]">
+                <form action="#" method="POST" className="form-container mx-auto">
                 <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 mb-6">
                     <div>
                     <label htmlFor="name" className="block text-gray-700 text-sm">Name</label>
@@ -100,8 +99,8 @@ const ContactUs = () => {
         </div>
 
         <div className="text-center xl:w-1/2 w-full">
-            <h2 className="text-3xl font-semibold mb-6">Get Involved</h2>
-            <p className="text-lg text-center mb-8">
+            <h2 className="heading-1">Get Involved</h2>
+            <p className="heading-3 text-center mb-8">
                 Join us in creating a sustainable and prosperous future for Africa through nature-based solutions. Here's how you can contribute:
             </p>
 
@@ -118,7 +117,7 @@ const ContactUs = () => {
                     iconSize="30"
                     className="bg-white shadow w-full p-4 hover:bg-secondary rounded-lg transition-colors duration-100"
                 >
-                    <p className="text-gray-700 text-sm">{description}</p>
+                    <p className="text-gray-700">{description}</p>
                 </InfoCard>
                 ))}
             </div>

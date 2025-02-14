@@ -51,7 +51,7 @@ const FAQS = [
 
 // Shared styles as constants to improve consistency and reusability
 const STYLES = {
-  text: 'text-lg leading-relaxed mb-4',
+  text: 'mb-4',
   icon: 'size-12 text-primary mb-4',
   heading: 'text-2xl font-semibold mb-4',
 };

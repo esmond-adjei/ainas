@@ -18,7 +18,7 @@ html {
 
 @layer base {
   p {
-    @apply text-gray-800;
+    @apply text-gray-800 font-serif text-lg leading-tight;
   }
 }
 
@@ -26,12 +26,13 @@ html {
   @apply flex items-center hover:text-primary transition-colors duration-200;
 }
 
+
 .input {
   @apply border p-2 w-full;
 }
 
 .form-container {
-  @apply max-w-md bg-white space-y-4 border-borderColor p-4  shadow rounded;
+  @apply w-full md:max-w-md bg-white space-y-4 border-borderColor p-4  shadow rounded;
 }
 
 .hcc {
@@ -80,13 +81,16 @@ html {
 }
 
 .heading-1 {
-  @apply text-4xl font-semibold mb-4;
+  @apply text-5xl font-semibold mb-4 font-serif;
 }
 
 .heading-2 {
-  @apply text-xl font-semibold;
+  @apply text-2xl font-semibold font-serif;
 }
 
+.heading-3 {
+  @apply text-xl font-serif;
+}
 
 .section {
   @apply px-4 py-10 lg:px-40 lg:py-20;

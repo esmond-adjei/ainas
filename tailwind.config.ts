@@ -26,8 +26,8 @@ export default {
         borderColor: '#dddddd',
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        heading: ['Poppins', 'sans-serif'],
+        sans: ['Poppins', 'sans-serif'],
+        serif: ['var(--font-crimson)', 'serif'],
       },
     },
   },

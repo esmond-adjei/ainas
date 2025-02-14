@@ -15,7 +15,7 @@ const ImpactArea: React.FC<ImpactAreaProps> = ({ icon: Icon, title, description,
     <div className={`p-4 bg-transparent rounded-lg ${className}`}>
       {/* Left: Icon, Title, and Description */}
       <div className="text-left max-w-xl mx-auto">
-        <div className='flex gap-2 items-center mb-2'>
+        <div className='flex gap-2 items-center mb-4'>
           <Icon className='text-4xl text-primaryBright' size="30"/>
           <h3 className="heading-2">{title}</h3>
         </div>

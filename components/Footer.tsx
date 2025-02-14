@@ -11,20 +11,20 @@ export default function Footer() {
         {/* Flex Layout for Large Screens */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Logo and Brief Description */}
-          <div className="flex flex-col mb-8">
+          <div className="flex flex-col mb-4">
 
-            <Link href="/" className="text-2xl w-max font-heading font-bold text-primary">
-              <CustomIcon className="h-16 w-16 mx-auto" style={{fill: 'var(--primary-color)'}}/>
+            <Link href="/" className="text-3xl w-max font-heading font-bold text-primary font-serif">
+              <CustomIcon className="size-16 mx-auto" style={{fill: 'var(--primary-color)'}}/>
               AINAS
             </Link>
   
-            <p className=" text-gray-300 max-w-xs">
+            <p className="heading-3 text-gray-300 max-w-full lg:max-w-xs">
               Empowering communities with sustainable, nature-based solutions for a greener tomorrow.
             </p>
 
             {/* Social Media Icons */}
           <div>
-            <h3 className="text-xl font-semibold mt-4 mb-2">Follow Us</h3>
+            <h3 className="heading-2 mt-4 mb-2">Follow Us</h3>
             <div className="flex space-x-3">
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition">
                 <Linkedin size={20} />
@@ -39,16 +39,15 @@ export default function Footer() {
           </div>
 
           </div>
-
           {/* Contact Info Section */}
           <div className="space-y-4">
-            <h3 className="text-xl font-semibold mb-2">Contact</h3>
-            <div className="space-y-5">
+            <h3 className="heading-2 mb-2">Contact</h3>
+            <div className="flex flex-wrap [&>*]:w-1/2 gap-y-4 md:flex-col md:gap-4 md:[&>*]:w-full">
               <div className="flex">
                 <Mail className="text-primary mr-4" size={20} />
                 <div>
                   <h4 className="text-sm font-semibold">Email</h4>
-                  <p className="text-gray-300 text-xs">info@ainas-ngo.org</p>
+                  <p className="font-sans text-gray-300 text-xs">info@ainas-ngo.org</p>
                 </div>
               </div>
 
@@ -56,7 +55,7 @@ export default function Footer() {
                 <Phone className="text-primary mr-4" size={20} />
                 <div>
                   <h4 className="text-sm font-semibold">Phone</h4>
-                  <p className="text-gray-300 text-xs">+233 24 000 0000</p>
+                  <p className="font-sans text-gray-300 text-xs">+233 24 000 0000</p>
                 </div>
               </div>
 
@@ -64,7 +63,7 @@ export default function Footer() {
                 <MapPin className="text-primary mr-4" size={20} />
                 <div>
                   <h4 className="text-sm font-semibold">Our Address</h4>
-                  <p className="text-gray-300 text-xs leading-5">
+                  <p className="font-sans text-gray-300 text-xs leading-5">
                     House No. 15, <br/>
                     Anyaa-Atlas Junction, <br/> 
                     GC-112-3633, <br/> 
@@ -77,8 +76,8 @@ export default function Footer() {
 
           {/* Quick Links Section */}
           <div>
-            <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
-            <div className="space-y-4">
+            <h3 className="heading-2 mb-4">Quick Links</h3>
+            <div className="flex gap-2 md:flex-col md:gap-4">
               <Link href="/" className="block text-sm hover:text-primary transition">Home</Link>
               <Link href="/about" className="block text-sm hover:text-primary transition">About</Link>
               <Link href="/impact" className="block text-sm hover:text-primary transition">Impact</Link>
@@ -89,7 +88,7 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <p className="text-center text-gray-400 text-xs mt-8 border-t border-gray-400 border-opacity-50 py-4">
+        <p className="font-sans text-center text-gray-400 text-xs mt-8 border-t border-gray-400 border-opacity-50 py-4">
           &copy; {new Date().getFullYear()} AINAS. All rights reserved.
         </p>
       </div>
