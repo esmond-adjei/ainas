@@ -17,6 +17,31 @@ interface DropDownMenuItemProps {
   children: React.ReactNode;
 }
 
+interface NavItem {
+  name: string;
+  path: string;
+}
+
+interface DropdownItem extends NavItem {
+  items: NavItem[];
+}
+
+const NAV_ITEMS: (NavItem | DropdownItem)[] = [
+  { name: 'Home', path: ROUTES.home },
+  { name: 'About', path: ROUTES.about },
+  { name: 'Team', path: ROUTES.team },
+  { name: 'Contact', path: ROUTES.contact },
+  {
+    name: 'Explore',
+    path: '',
+    items: [
+      { name: 'Gallery', path: ROUTES.gallery },
+      { name: 'Our Impact', path: ROUTES.impact },
+      { name: 'Reports', path: ROUTES.report },
+    ],
+  },
+];
+
 const DropDownMenuItem: React.FC<DropDownMenuItemProps> = ({
   menuName, 
   open, 
@@ -118,11 +143,15 @@ const NavMenu: React.FC<{ isScrolled: boolean, isActive: (route: string) => {} }
           </Link>
 
           <Link href={ROUTES.about} className={isActive(ROUTES.about) ? `menu-item active`: `menu-item` }>
-          About Us
+          About
         </Link>
 
         <Link href={ROUTES.team} className={isActive(ROUTES.team) ? `menu-item active`: `menu-item` }>
-          Our Team
+          Team
+        </Link>
+
+        <Link href={ROUTES.contact} className={isActive(ROUTES.team) ? `menu-item active`: `menu-item` }>
+        Contact
         </Link>
 
         <br />
@@ -131,14 +160,6 @@ const NavMenu: React.FC<{ isScrolled: boolean, isActive: (route: string) => {} }
             variant="dropdown" 
             className="menu-item !m-0 !border-none"
           >
-            <Link
-            href={ROUTES.contact}
-            className="block px-4 py-2 hover:bg-gray-200"
-            role="menuitem"
-          >
-            Contact Us
-          </Link>
-
           <Link
             href={ROUTES.impact}
             className="block px-4 py-2 hover:bg-gray-200"
@@ -154,11 +175,11 @@ const NavMenu: React.FC<{ isScrolled: boolean, isActive: (route: string) => {} }
             Reports
           </Link>
           <Link
-            href={ROUTES.blog}
+            href={ROUTES.gallery}
             className="block px-4 py-2 hover:bg-gray-200"
             role="menuitem"
           >
-            Blog
+            Gallery
           </Link>
           </ExpandableSection>
 
@@ -221,54 +242,36 @@ export default function Navbar() {
       </div>
 
       <div className="gap-4 hidden md:flex items-center">
-        <Link href={ROUTES.home} className={isActive(ROUTES.home) ? `${navTheme} active`: navTheme }>
-          Home
-        </Link>
-
-        <Link href={ROUTES.about} className={isActive(ROUTES.about) ? `${navTheme} active`: navTheme }>
-          About Us
-        </Link>
-
-        <Link href={ROUTES.team} className={isActive(ROUTES.team) ? `${navTheme} active`: navTheme }>
-          Our Team
-        </Link>
-
-        <DropDownMenuItem
-          menuName="Explore"
-          className={navTheme}
-          open={openExplore}
-          setOpen={setOpenExplore}
-        >
-          <Link
-            href={ROUTES.contact}
-            className="block px-4 py-2 hover:bg-gray-200"
-            role="menuitem"
-          >
-            Contact Us
-          </Link>
-
-          <Link
-            href={ROUTES.impact}
-            className="block px-4 py-2 hover:bg-gray-200"
-            role="menuitem"
-          >
-            Our Impact
-          </Link>
-          <Link
-            href={ROUTES.report}
-            className="block px-4 py-2 hover:bg-gray-200"
-            role="menuitem"
-          >
-            Reports
-          </Link>
-          <Link
-            href={ROUTES.blog}
-            className="block px-4 py-2 hover:bg-gray-200"
-            role="menuitem"
-          >
-            Blog
-          </Link>
-        </DropDownMenuItem>
+        {NAV_ITEMS.map((item) => (
+          'items' in item ? (
+            <DropDownMenuItem
+              key={item.name}
+              menuName={item.name}
+              className={navTheme}
+              open={openExplore}
+              setOpen={setOpenExplore}
+            >
+              {item.items.map((subItem) => (
+                <Link
+                  key={subItem.path}
+                  href={subItem.path}
+                  className="block px-4 py-2 hover:bg-gray-200"
+                  role="menuitem"
+                >
+                  {subItem.name}
+                </Link>
+              ))}
+            </DropDownMenuItem>
+          ) : (
+            <Link
+              key={item.path}
+              href={item.path}
+              className={isActive(item.path) ? `${navTheme} active` : navTheme}
+            >
+              {item.name}
+            </Link>
+          )
+        ))}
 
         <Link
           href="/#contact-us"

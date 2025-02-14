@@ -3,33 +3,33 @@
 import { Camera, Users, Activity, Globe, LucideIcon } from 'lucide-react';
 import SwiperLayout from '@/components/Carousel';
 
+const IMPACT_AREAS = [
+  {
+    icon: Camera,
+    title: 'Visual Impact',
+    description: 'Our solutions create beautiful and sustainable landscapes that enhance the visual appeal of any environment.',
+    imageSrc: '/images/visual-impact.jpg'
+  },
+  {
+    icon: Users,
+    title: 'Community Impact',
+    description: 'By involving local communities, we ensure our solutions create positive social and economic impacts.',
+    imageSrc: '/images/community-impact.jpg'
+  },
+  {
+    icon: Activity,
+    title: 'Ecological Impact',
+    description: 'Our nature-based approaches restore and protect ecosystems, promoting biodiversity and environmental health.',
+    imageSrc: '/images/ecological-impact.jpg'
+  },
+  {
+    icon: Globe,
+    title: 'Global Impact',
+    description: 'We implement our solutions worldwide, contributing to global sustainability and climate change mitigation efforts.',
+    imageSrc: '/images/global-impact.jpg'
+  }
+];
 const ImpactSection = () => {
-  const impactAreas = [
-    {
-      icon: Camera,
-      title: 'Visual Impact',
-      description: 'Our solutions create beautiful and sustainable landscapes that enhance the visual appeal of any environment.',
-      imageSrc: '/images/visual-impact.webp'
-    },
-    {
-      icon: Users,
-      title: 'Community Impact',
-      description: 'By involving local communities, we ensure our solutions create positive social and economic impacts.',
-      imageSrc: '/images/community-impact.webp'
-    },
-    {
-      icon: Activity,
-      title: 'Ecological Impact',
-      description: 'Our nature-based approaches restore and protect ecosystems, promoting biodiversity and environmental health.',
-      imageSrc: '/images/ecological-impact.webp'
-    },
-    {
-      icon: Globe,
-      title: 'Global Impact',
-      description: 'We implement our solutions worldwide, contributing to global sustainability and climate change mitigation efforts.',
-      imageSrc: '/images/global-impact.webp'
-    }
-  ];
 
   return (
     <section className="section bg-primaryDark bg-cover text-light"
@@ -47,7 +47,7 @@ const ImpactSection = () => {
           pagination={true}
           className='bg-primaryDark rounded-lg shadow-lg'
         >
-          {impactAreas.map((area, index) => (
+          {IMPACT_AREAS.map((area, index) => (
               <ImpactArea
                 key={index}
                 icon={area.icon}

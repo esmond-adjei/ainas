@@ -13,7 +13,7 @@ interface TeamMemberProps {
   showSummary?: boolean;
 }
 
-interface TeamMemberOverlayProps extends TeamMemberProps {
+interface TeamMemberModalProps extends TeamMemberProps {
   imageSrc: string;
   name: string;
   openModal: boolean;
@@ -23,7 +23,7 @@ interface TeamMemberOverlayProps extends TeamMemberProps {
 }
 
 
-const TeamMemberOverlay: React.FC<TeamMemberOverlayProps> = ({
+const TeamMemberModal: React.FC<TeamMemberModalProps> = ({
   openModal,
   setOpenedModal,
   imageSrc,
@@ -39,19 +39,24 @@ const TeamMemberOverlay: React.FC<TeamMemberOverlayProps> = ({
         setOpenedModal(false);
       }
     };
-
+    if (openModal) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
     document.addEventListener('mousedown', handleClickOutside);
 
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
+      document.body.style.overflow = 'auto';
     };
-  }, [setOpenedModal]);
+  }, [setOpenedModal, openModal]);
 
   if (!openModal) return null;
 
   return (
     <motion.div
-      className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50"
+      className="fixed inset-0 bg-black/50 hcc z-50"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -64,22 +69,28 @@ const TeamMemberOverlay: React.FC<TeamMemberOverlayProps> = ({
       >
         <div
           ref={modalRef}
-          className="flex flex-col items-center bg-white h-max-[90vh] overflow-y-auto p-8 rounded-lg w-full max-w-lg shadow-lg relative"
+          className="bg-white h-max-[90vh] overflow-y-auto p-8 rounded-lg max-w-lg shadow-lg relative"
         >
-          <img
-            src={imageSrc}
-            alt={name}
-            className="w-32 h-32 rounded-full object-cover mb-4"
-          />
-          <h3 className="text-2xl font-semibold mb-2">{name}</h3>
-          <p className="text-gray-500 mb-4">{title}</p>
-          <p className="text-gray-700 mb-8">{bio}</p>
           <button
             onClick={() => setOpenedModal(false)}
             className="absolute right-2 top-2 p-2 bg-gray-200 text-gray-600 rounded-full hover:bg-gray-300 transition"
           >
             <X />
           </button>
+
+          <div className='flex gap-4 justify-start'>
+            <img
+              src={imageSrc}
+              alt={name}
+              className="size-32 shrink-0 rounded-full object-cover bg-gray-400"
+            />
+            <div>
+              <h3 className="text-2xl text-left font-semibold mb-2">{name}</h3>
+              <p className="text-gray-600 text-sm w-max px-3 py-1 rounded-3xl bg-slate-200">{title}</p>
+            </div>
+          </div>
+
+          <p className="py-4">{bio}</p>
         </div>
       </motion.div>
     </motion.div>
@@ -96,7 +107,7 @@ const TeamMember: React.FC<TeamMemberProps> = ({ imageSrc, name, title, bio, sho
   return (
     <>
       <div 
-        className="bg-gray-200 relative cursor-pointer w-[300px] h-[400px] hover:shadow-2xl hover:-translate-y-2 transition-all duration-200" 
+        className="bg-gray-200 relative cursor-pointer w-[300px] h-[400px] hover:shadow-2xl hover:-translate-y-2 transition-all duration-200 bg-contain bg-center" 
         onClick={toggleModal}
         style={{backgroundImage: `url(${imageSrc})`}}
       >
@@ -109,7 +120,7 @@ const TeamMember: React.FC<TeamMemberProps> = ({ imageSrc, name, title, bio, sho
       {/* Modal for Detailed Info */}
       {
         showSummary && (
-          <TeamMemberOverlay 
+          <TeamMemberModal 
             openModal={isModalOpen} 
             setOpenedModal={setIsModalOpen} 
             imageSrc={imageSrc} 

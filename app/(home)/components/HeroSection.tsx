@@ -1,39 +1,51 @@
 'use client';
 
+import React, { memo } from 'react';
 import { ROUTES } from '@/lib';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 
-export default function Hero() {
+const BACKGROUND_IMAGE = '/images/hero-bg.webp';
+
+function Hero() {
   return (
-    <motion.section
-      className="relative flex flex-col justify-center h-[720px] bg-cover bg-center text-white"
-      style={{ backgroundImage: `url('/images/hero-bg.webp')` }}
-      
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}
+    <section
+      className="relative flex flex-col justify-center h-[720px] text-white"
+      // initial={{ opacity: 0 }}
+      // animate={{ opacity: 1 }}
     >
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <Image
+          src={BACKGROUND_IMAGE}
+          alt="Hero Background"
+          fill
+          className="object-cover object-center"
+          priority
+        />
+      </div>
+
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-70"></div>
 
       {/* Content */}
-      <motion.div 
+      <motion.div
         className="relative z-10 px-4 max-w-3xl mx-auto"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
+        transition={{ duration: 0.4, delay: 0.1 }}
         viewport={{ once: true }}
       >
-        <h1 className="text-6xl md:text-7xl font-serif font-bold text-white mb-6 drop-shadow-lg">
-        Promoting Sustainable Development of Africa
+        <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white mb-6 drop-shadow-lg">
+          Nature's Power, <br /> Africa's Future
         </h1>
         <p className="text-xl font-serif font-thin md:text-2xl text-light mb-8">
-          Empowering African communities with sustainable, nature-based solutions for a greener and more prosperous future.
+          Promoting sustainable development of Africa through the implementation and advocacy of nature-based solutions for a greener and more prosperous future.
         </p>
 
-        {/* Call-to-Action Button */}
-        <div className='w-max space-x-2 rounded-full bg-white/50 p-2 backdrop-blur-md'>
+        {/* Call-to-Action Buttons */}
+        <div className="w-max space-x-2 rounded-full bg-white/50 p-2 backdrop-blur-md">
           <Link
             href={ROUTES.about}
             className="inline-block active:scale-95 px-6 py-3 bg-primary text-light hover:text-dark font-semibold rounded-full hover:bg-secondary transition-all duration-300"
@@ -41,44 +53,50 @@ export default function Hero() {
             Learn More
           </Link>
           <Link
-            href='#contact-us'
+            href="#contact-us"
             className="inline-block active:scale-95 px-6 py-3 text-dark hover:text-light font-semibold rounded-full transition-all duration-300"
           >
             Get Involved
           </Link>
         </div>
       </motion.div>
-    </motion.section>
+    </section>
   );
 }
 
-export function PageHero(
-  {title, description, backgroundImage}:
-  {title: string, description?: string, backgroundImage: string}
-) {
+export default memo(Hero);
+type PageHeroProps = {
+  title: string;
+  description?: string;
+  backgroundImage: string;
+};
+
+export function PageHero({ title, description, backgroundImage }: PageHeroProps) {
   return (
-    <motion.section
-      className="relative flex flex-col justify-center h-[400px] bg-cover bg-center text-white"
-      style={{ backgroundImage: `url(${backgroundImage})` }}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}
-    >
+    <section className="relative flex flex-col justify-center h-[400px] text-white">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <Image
+          src={backgroundImage}
+          alt={`${title} Background`}
+          fill
+          className="object-cover object-center"
+          priority
+        />
+      </div>
+
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-70"></div>
 
       {/* Content */}
-      <div className="relative z-10 px-4 container mx-auto">
-        <h1 className="text-4xl md:text-4xl font-heading font-bold text-white text-center mb-6">
-          {title}
-        </h1>
-        {
-          description &&
-        <p className="text-lg md:text-xl max-w-2xl text-light mb-8">
-          {description}
-        </p>
-        }
+      <div className="relative z-10 px-4 container mx-auto max-w-2xl">
+        <h1 className="heading-1 text-white text-center mb-6">{title}</h1>
+        {description && (
+          <p className="heading-3 text-center text-wrap text-light">
+            {description}
+          </p>
+        )}
       </div>
-    </motion.section>
+    </section>
   );
 }

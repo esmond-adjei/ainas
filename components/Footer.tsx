@@ -47,7 +47,9 @@ export default function Footer() {
                 <Mail className="text-primary mr-4" size={20} />
                 <div>
                   <h4 className="text-sm font-semibold">Email</h4>
-                  <p className="font-sans text-gray-300 text-xs">info@ainas-ngo.org</p>
+                  <p className="font-sans text-gray-300 text-xs">
+                    <a href="mailto:support@ainas.org">support@ainas.org</a>
+                  </p>
                 </div>
               </div>
 
@@ -55,19 +57,20 @@ export default function Footer() {
                 <Phone className="text-primary mr-4" size={20} />
                 <div>
                   <h4 className="text-sm font-semibold">Phone</h4>
-                  <p className="font-sans text-gray-300 text-xs">+233 24 000 0000</p>
+                  <p className="font-sans text-gray-300 text-xs">
+                    <a href="https://wa.me/+233240000000">+233 24 000 0000</a>
+                  </p>
                 </div>
               </div>
 
               <div className="flex">
                 <MapPin className="text-primary mr-4" size={20} />
                 <div>
-                  <h4 className="text-sm font-semibold">Our Address</h4>
+                  <h4 className="text-sm font-semibold">Location</h4>
                   <p className="font-sans text-gray-300 text-xs leading-5">
-                    House No. 15, <br/>
-                    Anyaa-Atlas Junction, <br/> 
-                    GC-112-3633, <br/> 
-                    Accra, Ghana <br/>
+                    M0435 NSROMA ST, <br/>
+                    CX-020-2382, <br/> 
+                    Kasoa, Ghana <br/>
                   </p>
                 </div>
               </div>

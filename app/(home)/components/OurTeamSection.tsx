@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 const teamMembers = [
   {
-    imageSrc: "https://via.placeholder.com/300x300.png?text=Dr.+Caleb+Melenya+Ocansey",
+    imageSrc: "/images/profiles/caleb.jpg",
     name: "Dr. Caleb Melenya Ocansey",
     title: "Founder & President",
     bio: "Dr. Ocansey founded AINAS to address Africa's most pressing environmental challenges. With expertise in sustainable development, he leads the organization's mission to empower African communities.",

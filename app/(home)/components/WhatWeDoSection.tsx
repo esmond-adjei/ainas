@@ -8,30 +8,35 @@ import Link from 'next/link';
 
 const ActivitiesInfo = [
     {
-        icon: Sprout,
-        title: 'Sustainable Agriculture & Agroforestry',
-        text: "AINAS is dedicated to implementing nature-based solutions that address Africa's environmental and social challenges. Below are the key areas where we focus our efforts."
-    },
-    {
-        icon: Droplets,
-        title: 'Water Resource Management',
-        text: "Supporting sustainable farming practices that improve soil health, increase food security, and generate income for communities."
-    },
-    {
-        icon: Sun,
-        title: 'Renewable Energy Solutions',
-        text: "Increasing access to solar and biogas energy to power communities sustainably while reducing reliance on fossil fuels."
-    },
-    {
         icon: Building,
-        title: 'Climate-Resilient Infrastructure',
-        text: "Building infrastructure such as green roofs and permeable pavements to manage stormwater and reduce climate vulnerability."
+        title: 'Build Capacity',
+        text: "Empower African communities with the skills, tools, knowledge and platforms to design and implement innovative nature-based solutions that restore ecosystems and improve livelihoods."
     },
     {
         icon: Heart,
-        title: 'Health & Well-being',
-        text: "Enhancing health outcomes by addressing air quality, water sanitation, and providing community health programs."
+        title: 'Co-create Livelihoods',
+        text: "Collaborate with communities to develop sustainable enterprises and alternative livelihoods tailored to their specific needs, creating lasting economic opportunities."
     },
+    {
+        icon: Sun,
+        title: 'Climate Smart Activities',
+        text: "Promote climate-smart practices that improve food security and build resilience in rural and urban communities."
+    },
+    {
+        icon: Sprout,
+        title: 'Promote Sustainable Land Use',
+        text: "Advance land management, planning, Agroforestry and forest conservation initiatives that protect natural resources and preserve Africa's rich biodiversity."
+    },
+    {
+        icon: Droplets,
+        title: 'Expand Access to Water and Energy',
+        text: "Improve rural access to clean water and renewable energy to drive sustainable development while reducing environmental impact."
+    },
+    {
+        icon: Building,
+        title: 'Raise Awareness',
+        text: "Champion nature-based solutions through advocacy, education, community led initiatives and partnerships to inspire action and promote sustainable development across Africa."
+    }
 ]
 
 export default function WhatWeDoSection() {

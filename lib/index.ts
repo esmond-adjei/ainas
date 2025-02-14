@@ -4,8 +4,8 @@ export const ROUTES = {
 
     team: '/team',
     contact: '/contact',
-    impact: '/impact',
     initiatives: '/initiatives',
-    blog: '/blog',
-    report: '/report',
+    gallery: '/gallery',
+    impact: '/#',
+    report: '/#',
 }
