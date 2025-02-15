@@ -51,7 +51,7 @@ export default function Footer() {
           <div className={`[&>*]:text-secondary`}>
             <h1 className='text-3xl font-heading font-bold font-serif leading-7'>AINAS</h1>
             <p className={`text-sm`}>
-              Africa Initiative for Nature Based Solutions
+              Africa Initiative for Nature-Based Solutions
             </p>
           </div>
         </Link>

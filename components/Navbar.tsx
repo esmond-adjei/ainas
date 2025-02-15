@@ -135,58 +135,35 @@ const NavMenu: React.FC<{ isScrolled: boolean, isActive: (route: string) => {} }
             ['--animation-duration' as any]: '0.8s',
           }}
         >
-          <Link href={ROUTES.home} className="menu-item">
-            Home
-          </Link>
-
-          <Link href={ROUTES.about} className={isActive(ROUTES.about) ? `menu-item active`: `menu-item` }>
-          About
-        </Link>
-
-        <Link href={ROUTES.team} className={isActive(ROUTES.team) ? `menu-item active`: `menu-item` }>
-          Team
-        </Link>
-
-        <Link href={ROUTES.contact} className={isActive(ROUTES.team) ? `menu-item active`: `menu-item` }>
-        Contact
-        </Link>
-
-        <br />
-          <ExpandableSection 
+          {NAV_ITEMS.map((item, index) => (
+          'items' in item ? (
+            <ExpandableSection 
+            key={index}
             title="Explore" 
             variant="dropdown" 
             className="menu-item !m-0 !border-none"
-          >
-          <Link
-            href={ROUTES.impact}
-            className="block px-4 py-2 hover:bg-gray-200"
-            role="menuitem"
-          >
-            Our Impact
-          </Link>
-          <Link
-            href={ROUTES.report}
-            className="block px-4 py-2 hover:bg-gray-200"
-            role="menuitem"
-          >
-            Reports
-          </Link>
-          <Link
-            href={ROUTES.gallery}
-            className="block px-4 py-2 hover:bg-gray-200"
-            role="menuitem"
-          >
-            Gallery
-          </Link>
-          </ExpandableSection>
-
-
-          <Link 
-            href="#contact-us" 
-            className="menu-item !rounded-full bg-primaryDark !text-primaryBright hover:!text-primaryDark"
-          >
-            Get Involved
-          </Link>
+            >
+              {item.items.map((subItem, subIndex) => (
+                <Link
+                  key={subIndex}
+                  href={subItem.path}
+                  className="block px-4 py-2 hover:bg-gray-200"
+                  role="menuitem"
+                >
+                  {subItem.name}
+                </Link>
+              ))}
+            </ExpandableSection>
+          ) : (
+            <Link
+              key={index}
+              href={item.path}
+              className={isActive(item.path) ? `menu-item active`: `menu-item`}
+            >
+              {item.name}
+            </Link>
+          )
+        ))}
         </div>
       </div>
     </>
@@ -237,7 +214,7 @@ export default function Navbar() {
             }`}>
             <h1 className='text-3xl font-heading font-bold font-serif leading-7'>AINAS</h1>
             <p className={`text-sm`}>
-              Africa Initiative for Nature Based Solutions
+              Africa Initiative for Nature-Based Solutions
             </p>
           </div>
         </Link>
@@ -253,9 +230,9 @@ export default function Navbar() {
               open={openExplore}
               setOpen={setOpenExplore}
             >
-              {item.items.map((subItem) => (
+              {item.items.map((subItem, index) => (
                 <Link
-                  key={subItem.path}
+                  key={index}
                   href={subItem.path}
                   className="block px-4 py-2 hover:bg-gray-200"
                   role="menuitem"

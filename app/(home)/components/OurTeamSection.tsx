@@ -56,6 +56,7 @@ export default function OurTeam() {
             name={member.name}
             title={member.title}
             bio={member.bio}
+            showSummary={false}
           />
         ))}
       </div>

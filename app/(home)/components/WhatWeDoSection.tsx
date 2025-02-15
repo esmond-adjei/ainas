@@ -1,6 +1,6 @@
 'use client';
 
-import { Sprout, Sun, Building, Heart, Droplets, ChevronRight } from 'lucide-react';
+import { Sprout, Sun, Heart, Droplets, ChevronRight, Megaphone, Hammer } from 'lucide-react';
 import InfoCard from '@/components/InfoCard';
 import AnimatedSection from '@/components/AnimatedSection';
 import { ROUTES } from '@/lib';
@@ -8,7 +8,7 @@ import Link from 'next/link';
 
 const ActivitiesInfo = [
     {
-        icon: Building,
+        icon: Hammer,
         title: 'Build Capacity',
         text: "Empower African communities with the skills, tools, knowledge and platforms to design and implement innovative nature-based solutions that restore ecosystems and improve livelihoods."
     },
@@ -33,7 +33,7 @@ const ActivitiesInfo = [
         text: "Improve rural access to clean water and renewable energy to drive sustainable development while reducing environmental impact."
     },
     {
-        icon: Building,
+        icon: Megaphone,
         title: 'Raise Awareness',
         text: "Champion nature-based solutions through advocacy, education, community led initiatives and partnerships to inspire action and promote sustainable development across Africa."
     }
