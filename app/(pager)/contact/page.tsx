@@ -36,7 +36,6 @@ const FAQS = [
   }
 ];
 
-// Add this contact data array
 const CONTACTS = [
   {
     icon: Mail,

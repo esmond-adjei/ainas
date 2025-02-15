@@ -1,6 +1,28 @@
 import Link from 'next/link';
 import { Facebook, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
 import CustomIcon from './CustomIcon';
+import React from 'react';
+
+const CONTACTS = [
+  {
+    icon: Mail,
+    title: "Email",
+    content: "support@ainas.org",
+    href: "mailto:support@ainas.org",
+  },
+  {
+    icon: Phone,
+    title: "Phone",
+    content: "+233 24 000 0000",
+    href: "https://wa.me/+233240000000",
+  },
+  {
+    icon: MapPin,
+    title: "Location",
+    content: "M0435 NSROMA ST,\nCX-020-2382,\nKasoa, Ghana",
+    multiline: true,
+  },
+];
 
 export default function Footer() {
   return (
@@ -13,12 +35,28 @@ export default function Footer() {
           {/* Logo and Brief Description */}
           <div className="flex flex-col mb-4">
 
-            <Link href="/" className="text-3xl w-max font-heading font-bold text-primary font-serif">
+            {/* <Link href="/" className="text-3xl w-max font-heading font-bold text-primary font-serif">
               <CustomIcon className="size-16 mx-auto" style={{fill: 'var(--primary-color)'}}/>
               AINAS
-            </Link>
+            </Link> */}
+
+            <Link
+              href="/"
+              className={`flex gap-2 mb-2`}
+            >
+          <CustomIcon
+            className="size-12 inline-block"
+            style={{ fill: 'var(--secondary-color)'}}
+          />
+          <div className={`[&>*]:text-secondary`}>
+            <h1 className='text-3xl font-heading font-bold font-serif leading-7'>AINAS</h1>
+            <p className={`text-sm`}>
+              Africa Initiative for Nature Based Solutions
+            </p>
+          </div>
+        </Link>
   
-            <p className="heading-3 text-gray-300 max-w-full lg:max-w-xs">
+            <p className="heading-3 !text-base text-gray-300 max-w-full lg:max-w-xs">
               Empowering communities with sustainable, nature-based solutions for a greener tomorrow.
             </p>
 
@@ -39,41 +77,30 @@ export default function Footer() {
           </div>
 
           </div>
+
           {/* Contact Info Section */}
           <div className="space-y-4">
             <h3 className="heading-2 mb-2">Contact</h3>
             <div className="flex flex-wrap [&>*]:w-1/2 gap-y-4 md:flex-col md:gap-4 md:[&>*]:w-full">
-              <div className="flex">
-                <Mail className="text-primary mr-4" size={20} />
+            {CONTACTS.map((contact, index) => (
+              <div key={index} className="flex">
+              <contact.icon className="text-primary mr-4" size={20} />
                 <div>
-                  <h4 className="text-sm font-semibold">Email</h4>
-                  <p className="font-sans text-gray-300 text-xs">
-                    <a href="mailto:support@ainas.org">support@ainas.org</a>
+                  <h4 className="font-semibold">{contact.title}</h4>
+                  <p className="font-sans text-xs text-white/60">
+                    {contact.multiline ? (
+                      contact.content.split('\n').map((line, i) => (
+                        <React.Fragment key={i}>
+                          {line}<br />
+                        </React.Fragment>
+                      ))
+                    ) : (
+                      <a href={contact.href} className="hover:text-primaryBright">{contact.content}</a>
+                    )}
                   </p>
                 </div>
               </div>
-
-              <div className="flex">
-                <Phone className="text-primary mr-4" size={20} />
-                <div>
-                  <h4 className="text-sm font-semibold">Phone</h4>
-                  <p className="font-sans text-gray-300 text-xs">
-                    <a href="https://wa.me/+233240000000">+233 24 000 0000</a>
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex">
-                <MapPin className="text-primary mr-4" size={20} />
-                <div>
-                  <h4 className="text-sm font-semibold">Location</h4>
-                  <p className="font-sans text-gray-300 text-xs leading-5">
-                    M0435 NSROMA ST, <br/>
-                    CX-020-2382, <br/> 
-                    Kasoa, Ghana <br/>
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
 

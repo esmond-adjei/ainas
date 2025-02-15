@@ -105,12 +105,9 @@ const NavMenu: React.FC<{ isScrolled: boolean, isActive: (route: string) => {} }
     };
 
     document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
-
-  const navTheme = `menu-item hover:!text-dark ${
-    isScrolled ? '!text-dark' : '!text-light'
-  }`;
 
   return (
     <>
@@ -227,9 +224,7 @@ export default function Navbar() {
       <div>
         <Link
           href="/"
-          className={`text-3xl font-heading font-bold font-serif ${
-            isScrolled ? 'text-primary' : 'text-light'
-          }`}
+          className={`flex gap-2`}
         >
           <CustomIcon
             className="size-12 inline-block"
@@ -237,7 +232,14 @@ export default function Navbar() {
               fill: isScrolled ? 'var(--primary-color)' : 'white',
             }}
           />
-          AINAS
+          <div className={`${
+              isScrolled ? '[&>*]:text-primary' : '[&>*]:text-light'
+            }`}>
+            <h1 className='text-3xl font-heading font-bold font-serif leading-7'>AINAS</h1>
+            <p className={`text-sm`}>
+              Africa Initiative for Nature Based Solutions
+            </p>
+          </div>
         </Link>
       </div>
 
