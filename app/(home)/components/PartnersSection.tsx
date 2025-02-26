@@ -38,7 +38,7 @@ export default function PartnerSection() {
                             {PARTNERS.map((partner, index) => (
                                 <div 
                                     key={index} 
-                                    className="flex-shrink-0 opacity-20 hover:opacity-100 grayscale hover:grayscale-0 transition-all"
+                                    className="flex-shrink-0 opacity-40 hover:opacity-100 grayscale hover:grayscale-0 transition-all"
                                 >
                                     <h1 
                                     className="inline cursor-pointer text-4xl lg:text-6xl font-bold text-black/40 hover:text-black transition-all duration-400">

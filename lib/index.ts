@@ -6,6 +6,6 @@ export const ROUTES = {
     contact: '/contact',
     initiatives: '/initiatives',
     gallery: '/gallery',
-    impact: '/#',
-    report: '/#',
+    impact: '#',
+    report: '#',
 }
