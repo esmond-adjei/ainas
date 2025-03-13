@@ -73,7 +73,7 @@ type PageHeroProps = {
 
 export function PageHero({ title, description, backgroundImage }: PageHeroProps) {
   return (
-    <section className="relative flex flex-col justify-center h-[400px] text-white">
+    <section className="relative flex flex-col justify-center h-[380px] text-white">
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image

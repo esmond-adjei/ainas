@@ -1,6 +1,7 @@
 import ListPageLayout from "@/components/ListPageLayout";
 import TeamMember from "@/components/TeamMember";
 import { getMembers } from "@/data/team";
+// import Link from "next/link";
 
 const TeamPage = () => {
     const teamMembers = getMembers();
@@ -12,7 +13,7 @@ const TeamPage = () => {
         >
             {
             teamMembers.map((member, index) => (
-                // <Link href={`/team/${encodeURIComponent(member.name)}`} key={index}>
+                // <Link href={`/team/${member.slug}`} key={index}>
                 <TeamMember
                     key={index}
                     showSummary={true}
@@ -21,7 +22,7 @@ const TeamPage = () => {
                     title={member.title}
                     bio={member.bio}
                     />
-                // </Link>
+               // </Link>
           ))}
         </ListPageLayout>
     );

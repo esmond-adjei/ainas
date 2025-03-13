@@ -59,18 +59,23 @@ const TeamMemberModal: React.FC<TeamMemberModalProps> = ({
       className="fixed inset-0 bg-black/50 hcc z-50"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.3 }}
-    >
+      exit={{ opacity: 0}}
+      transition={{ duration: 0.2 }}
+      >
       <motion.div
         initial={{ scale: 0.8 }}
         animate={{ scale: 1 }}
-        transition={{ duration: 0.3 }}
-      >
+        transition={{ duration: 0.2 }}
+        >
         <div
           ref={modalRef}
           className="bg-white h-max-[90vh] overflow-y-auto p-8 rounded-lg max-w-lg shadow-lg relative"
         >
+          <img
+           src='/cross-circle-bloat.svg'
+            alt="cross-circle"
+            className="absolute -top-8 -left-8 size-32 z-0"
+            />
           <button
             onClick={() => setOpenedModal(false)}
             className="absolute right-2 top-2 p-2 bg-gray-200 text-gray-600 rounded-full hover:bg-gray-300 transition"
@@ -82,7 +87,7 @@ const TeamMemberModal: React.FC<TeamMemberModalProps> = ({
             <img
               src={imageSrc}
               alt={name}
-              className="size-32 shrink-0 rounded-full object-cover bg-gray-400"
+              className="size-32 shrink-0 rounded-full object-cover object-top bg-gray-400 filter grayscale"
             />
             <div>
               <h3 className="text-2xl text-left font-semibold mb-2">{name}</h3>
@@ -92,7 +97,7 @@ const TeamMemberModal: React.FC<TeamMemberModalProps> = ({
 
           <p className="py-4">{bio}</p>
         </div>
-      </motion.div>
+        </motion.div>
     </motion.div>
   );
 };
@@ -107,7 +112,7 @@ const TeamMember: React.FC<TeamMemberProps> = ({ imageSrc, name, title, bio, sho
   return (
     <>
       <div 
-        className="bg-gray-200 relative cursor-pointer w-[300px] h-[400px] hover:shadow-2xl hover:-translate-y-2 transition-all duration-200 bg-contain bg-center" 
+        className="bg-gray-200 relative cursor-pointer w-[300px] h-[400px] hover:shadow-2xl hover:-translate-y-2 transition-all duration-200 bg-cover bg-center" 
         onClick={toggleModal}
         style={{backgroundImage: `url(${imageSrc})`}}
       >
