@@ -4,7 +4,8 @@ const teamMembers = [
         name: "Dr. Caleb Melenya Ocansey",
         slug: "caleb-melenya-ocansey",
         title: "Founder & President",
-        bio: "Dr. Ocansey founded AINAS to address Africa's most pressing environmental challenges. With expertise in sustainable development, he leads the organization's mission to empower African communities."
+        bio: "Dr. Caleb Ocansey is an ecosystem monitoring expert and the founder of the African Initiative for Nature-Based Solutions (AINAS), dedicated to addressing Africa’s environmental challenges through sustainable solutions. With a Ph.D. in Soil Science from KNUST and extensive research experience across Africa and Europe, he specializes in ecosystem monitoring, land reclamation, climate resilience, and sustainable agriculture. He is actively involved in international collaborations, including the Responsible AI Lab (RAIL) and the European Joint Programme - Soil. Dr. Ocansey’s work bridges science and real-world impact, promoting sustainable land use and community-driven solutions.",
+        detail: "",
     },
     {
         imageSrc: "/images/profiles/eric.jpg",
@@ -21,18 +22,11 @@ const teamMembers = [
         bio: "Dr. Enoch Bessah brings extensive experience in climate change, soil science, and water resources management. He is a Senior Lecturer at KNUST's Agricultural and Biosystems Engineering Department. Dr. Bessah guarantees AINAS's research delivers scientifically sound solutions. These solutions are specifically designed for local contexts."
     },
     {
-        imageSrc: "https://via.placeholder.com/300x300.png?text=Dr.+Andrew+Selasi+Agbemenu",
+        imageSrc: "/images/profiles/andrew.jpg",
         name: "Dr. Andrew Selasi Agbemenu",
         slug: "andrew-selasi-agbemenu",
         title: "Director of Technology & Innovation",
-        bio: "Dr. Agbemenu drives AINAS's technological innovations, integrating renewable energy, sustainable agriculture, and smart technologies into our projects."
-    },
-    {
-        imageSrc: "https://via.placeholder.com/300x300.png?text=Dr.+Kofi+Konadu",
-        name: "Dr. Kofi Konadu",
-        slug: "kofi-konadu",
-        title: "Director of Environmental Sustainability",
-        bio: "Dr. Konadu oversees AINAS's environmental sustainability programs, working to restore ecosystems and promote climate resilience across Africa."
+        bio: "Dr. Andrew Selasi Agbemenu holds the position of Senior Lecturer in the Department of Computer Engineering and is a qualified professional engineer. Additionally, he is the Deputy Director of the Distributed IoT-Platforms, Privacy, and Edge-Intelligence Research (DIPPER) Lab. Dr. Agbemenu’s research interests encompass analog and mixed-signal integrated circuits, sensor design, blockchain, Internet of Things (IoT), artificial intelligence (AI), and machine learning. These domains are utilised in interdisciplinary research to devise innovative solutions in agriculture, healthcare, and other critical developmental value chains."
     },
     {
         imageSrc: "/images/profiles/angela.jpg",
@@ -42,11 +36,18 @@ const teamMembers = [
         bio: "Dr. Tabiri, an award-winning science communicator and researcher in quantum algebra, empowers young minds in STEM through mentorship and outreach. As the Academic Manager for AIMS Ghana's Girls in Mathematical Sciences Program, she has guided over 100 high school girls toward STEM careers. She also leads Femafricmaths, an initiative promoting female African mathematicians, and actively contributes to global science communication efforts."
     },
     {
-        imageSrc: "https://via.placeholder.com/300x300.png?text=Dr.+Konadu+Antwi+Agyarkwa",
+        imageSrc: "/images/profiles/konadu.jpg",
         name: "Dr. Konadu Antwi Agyarkwa",
         slug: "konadu-antwi-agyarkwa",
         title: "Director of Communications and Public Relations",
         bio: "Dr. Agyarkwa manages AINAS's communications strategy and public relations initiatives to enhance visibility and stakeholder engagement."
+    },
+    {
+        imageSrc: "https://via.placeholder.com/300x300.png?text=Dr.+Kofi+Konadu",
+        name: "Dr. Kofi Konadu",
+        slug: "kofi-konadu",
+        title: "Director of Environmental Sustainability",
+        bio: "Dr. Konadu oversees AINAS's environmental sustainability programs, working to restore ecosystems and promote climate resilience across Africa."
     },
     {
         imageSrc: "https://via.placeholder.com/300x300.png?text=Nana+Adoma+Fredua+Antoh",
