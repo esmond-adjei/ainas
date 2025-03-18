@@ -50,6 +50,13 @@ const teamMembers = [
         bio: "Dr. Konadu oversees AINAS's environmental sustainability programs, working to restore ecosystems and promote climate resilience across Africa."
     },
     {
+        imageSrc: "/images/profiles/samuel.jpg",
+        name: "Dr. Samuel Ayodele Mesele",
+        slug: "samuel-ayodele-mesele",
+        title: "Country Director, Nigeria",
+        bio: "Dr. Mesele effectively directs AINAS's Nigeria operations, fostering strategic partnerships and ensuring robust, impactful program delivery."
+    },
+    {
         imageSrc: "https://via.placeholder.com/300x300.png?text=Nana+Adoma+Fredua+Antoh",
         name: "Nana Adoma Fredua Antoh",
         slug: "adoma-fredua-antoh",
@@ -84,13 +91,6 @@ const teamMembers = [
         title: "Director of Finance",
         bio: "Mr. Kottey manages AINAS's financial operations and ensures effective resource allocation across all projects and initiatives."
     },
-    {
-        imageSrc: "/images/profiles/samuel.png",
-        name: "Dr. Samuel Ayodele Mesele",
-        slug: "samuel-ayodele-mesele",
-        title: "Country Director, Nigeria",
-        bio: "Dr. Mesele effectively directs AINAS's Nigeria operations, fostering strategic partnerships and ensuring robust, impactful program delivery."
-    }
 ];
 
 
