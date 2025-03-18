@@ -2,9 +2,9 @@
 import { useParams } from 'next/navigation';
 import { notFound } from 'next/navigation';
 import Section from '@/components/SectionLayout';
-import { ChevronLeft } from 'lucide-react';
 import { getMember } from '@/data/team';
 import { PageHero } from '@/app/(home)/components/HeroSection';
+import { BackButton } from '@/components/BackButton';
 
 const TeamMemberDetail = () => {
   const { name } = useParams();
@@ -22,10 +22,7 @@ const TeamMemberDetail = () => {
         backgroundImage="/animated-shapes.svg"
        />
     <Section className='relative'>
-    <div 
-      className='absolute left-10 back-btn bg-white mb-4 border border-borderColor rounded-full p-3 w-max hover:bg-gray-100 cursor-pointer'
-      onClick={() => window.history.back()}
-    ><ChevronLeft size={24} /></div>
+    <BackButton className="absolute left-10" />
 
     <div 
       className='flex gap-10 flex-col md:flex-row'

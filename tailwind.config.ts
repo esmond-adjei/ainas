@@ -29,7 +29,32 @@ export default {
         sans: ['Poppins', 'sans-serif'],
         serif: ['var(--font-crimson)', 'serif'],
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            a: {
+              color: 'var(--primary-color)',
+              '&:hover': {
+                color: 'var(--primary-color-dark)',
+              },
+            },
+            // h1: {
+            //   fontFamily: 'var(--font-crimson), serif',
+            // },
+            // h2: {
+            //   fontFamily: 'var(--font-crimson), serif',
+            // },
+            // h3: {
+            //   fontFamily: 'var(--font-crimson), serif',
+            // },
+          },
+        },
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 } satisfies Config;
+
+// npm install gray-matter remark remark-html
