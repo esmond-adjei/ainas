@@ -3,7 +3,7 @@ import HeroSection from "./components/HeroSection";
 import Impact from "./components/ImpactSection";
 import AboutUs from "./components/AboutUsSection";
 import OurTeam from "./components/OurTeamSection";
-import PartnerSection from "./components/PartnersSection";
+// import PartnerSection from "./components/PartnersSection";
 import WhatWeDoSection from "./components/WhatWeDoSection";
 
 export default function Home() {
@@ -11,7 +11,7 @@ export default function Home() {
     <>
     <HeroSection/>
     <AboutUs/>
-    <PartnerSection/>
+    {/* <PartnerSection/> */}
     <Impact/>
     <WhatWeDoSection/>
     <OurTeam/>

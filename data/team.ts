@@ -78,7 +78,7 @@ const teamMembers = [
         bio: "Dr. Osakunor leads AINAS's advocacy efforts and policy development initiatives to promote sustainable environmental practices."
     },
     {
-        imageSrc: "/images/profiles/richard.jpg",
+        imageSrc: "/images/profiles/richard.jpeg",
         name: "Dr. Richard Adu Amoah",
         slug: "richard-adu-amoah",
         title: "Director of Community Engagement",
