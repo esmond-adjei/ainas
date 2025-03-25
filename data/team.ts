@@ -79,7 +79,7 @@ const teamMembers = [
     },
     {
         imageSrc: "/images/profiles/ivy.jpg",
-        name: "Ivy T. Lomotey",
+        name: "Ms. Ivy T. Lomotey",
         slug: "ivy-lomotey",
         title: "Director of Monitoring and Evaluation",
         bio: "Ms. Lomotey leads the monitoring and evaluation of AINAS's projects to ensure effective implementation and impact assessment."
