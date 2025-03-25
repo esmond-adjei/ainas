@@ -78,7 +78,7 @@ const teamMembers = [
         bio: "Dr. Konadu oversees AINAS's environmental sustainability programs, working to restore ecosystems and promote climate resilience across Africa."
     },
     {
-        imageSrc: "https://via.placeholder.com/300x300.png?text=Ivy+T.+Lomotey",
+        imageSrc: "/images/profiles/ivy.jpg",
         name: "Ivy T. Lomotey",
         slug: "ivy-lomotey",
         title: "Director of Monitoring and Evaluation",
@@ -99,5 +99,5 @@ export const getMembers = (length?: number) => {
 }
 
 export const getMember = (name: string) => {
-    return teamMembers.find(member => member.name === name);
+    return teamMembers.find(member => member.slug === name);
 }
