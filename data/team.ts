@@ -43,39 +43,11 @@ const teamMembers = [
         bio: "Dr. Agyarkwa manages AINAS's communications strategy and public relations initiatives to enhance visibility and stakeholder engagement."
     },
     {
-        imageSrc: "https://via.placeholder.com/300x300.png?text=Dr.+Kofi+Konadu",
-        name: "Dr. Kofi Konadu",
-        slug: "kofi-konadu",
-        title: "Director of Environmental Sustainability",
-        bio: "Dr. Konadu oversees AINAS's environmental sustainability programs, working to restore ecosystems and promote climate resilience across Africa."
-    },
-    {
         imageSrc: "/images/profiles/samuel.jpg",
         name: "Dr. Samuel Ayodele Mesele",
         slug: "samuel-ayodele-mesele",
         title: "Country Director, Nigeria",
         bio: "Dr. Mesele effectively directs AINAS's Nigeria operations, fostering strategic partnerships and ensuring robust, impactful program delivery."
-    },
-    {
-        imageSrc: "https://via.placeholder.com/300x300.png?text=Nana+Adoma+Fredua+Antoh",
-        name: "Nana Adoma Fredua Antoh",
-        slug: "adoma-fredua-antoh",
-        title: "Director of Legal Affairs",
-        bio: "Nana Antoh oversees all legal matters and ensures compliance with regulatory requirements across AINAS's operations."
-    },
-    {
-        imageSrc: "https://via.placeholder.com/300x300.png?text=Ivy+T.+Lomotey",
-        name: "Ivy T. Lomotey",
-        slug: "ivy-lomotey",
-        title: "Director of Monitoring and Evaluation",
-        bio: "Ms. Lomotey leads the monitoring and evaluation of AINAS's projects to ensure effective implementation and impact assessment."
-    },
-    {
-        imageSrc: "https://via.placeholder.com/300x300.png?text=Dr.+Derek+Osakunor",
-        name: "Dr. Derek Osakunor",
-        slug: "derek-osakunor",
-        title: "Director of Advocacy and Policy",
-        bio: "Dr. Osakunor leads AINAS's advocacy efforts and policy development initiatives to promote sustainable environmental practices."
     },
     {
         imageSrc: "/images/profiles/richard.jpeg",
@@ -90,6 +62,34 @@ const teamMembers = [
         slug: "henry-kottey",
         title: "Director of Finance",
         bio: "Mr. Kottey manages AINAS's financial operations and ensures effective resource allocation across all projects and initiatives."
+    },
+    {
+        imageSrc: "/images/profiles/nana.jpg",
+        name: "Nana Adoma Fredua Antoh",
+        slug: "adoma-fredua-antoh",
+        title: "Director of Legal Affairs",
+        bio: "Nana Antoh oversees all legal matters and ensures compliance with regulatory requirements across AINAS's operations."
+    },
+    {
+        imageSrc: "https://via.placeholder.com/300x300.png?text=Dr.+Kofi+Konadu",
+        name: "Dr. Kofi Konadu",
+        slug: "kofi-konadu",
+        title: "Director of Environmental Sustainability",
+        bio: "Dr. Konadu oversees AINAS's environmental sustainability programs, working to restore ecosystems and promote climate resilience across Africa."
+    },
+    {
+        imageSrc: "https://via.placeholder.com/300x300.png?text=Ivy+T.+Lomotey",
+        name: "Ivy T. Lomotey",
+        slug: "ivy-lomotey",
+        title: "Director of Monitoring and Evaluation",
+        bio: "Ms. Lomotey leads the monitoring and evaluation of AINAS's projects to ensure effective implementation and impact assessment."
+    },
+    {
+        imageSrc: "https://via.placeholder.com/300x300.png?text=Dr.+Derek+Osakunor",
+        name: "Dr. Derek Osakunor",
+        slug: "derek-osakunor",
+        title: "Director of Advocacy and Policy",
+        bio: "Dr. Osakunor leads AINAS's advocacy efforts and policy development initiatives to promote sustainable environmental practices."
     },
 ];
 
