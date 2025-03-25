@@ -12,10 +12,10 @@ const teamMembers = [
         name: "Dr. Eric Tutu Tchao",
         slug: "eric-tutu-tchao",
         title: "Executive Director",
-        bio: "Dr. Eric Tutu Tchao, Senior Lecturer in Computer Engineering at KNUST, directs the operational and strategic initiatives of AINAS. His expertise encompasses telecommunications, blockchain, IoT, and AI, with a focus on sustainable development and community engagement across Africa. Dr. Tchao's contributions extend to global research through his involvement with the Responsible AI Lab (RAIL), IEEE and the Internet Society."
+        bio: "Dr. Eric Tutu Tchao, Senior Lecturer in Computer Engineering at KNUST and Scientific Director at DIPPER Lab, directs the operational and strategic initiatives of AINAS. His expertise encompasses telecommunications, blockchain, IoT, and AI, with a focus on sustainable development and community engagement across Africa. Dr. Tchao's contributions extend to global research through his involvement with the Responsible AI Lab (RAIL), IEEE and the Internet Society."
     },
     {
-        imageSrc: "/images/profiles/aline.jpg",
+        imageSrc: "/images/profiles/aline.png",
         name: "Ms. Aline Adamou Barry",
         slug: "aline-adamou-barry",
         title: "Administrator",
@@ -36,7 +36,7 @@ const teamMembers = [
         bio: "Dr. Andrew Selasi Agbemenu holds the position of Senior Lecturer in the Department of Computer Engineering and is a qualified professional engineer. Additionally, he is the Deputy Director of the Distributed IoT-Platforms, Privacy, and Edge-Intelligence Research (DIPPER) Lab. Dr. Agbemenu’s research interests encompass analog and mixed-signal integrated circuits, sensor design, blockchain, Internet of Things (IoT), artificial intelligence (AI), and machine learning. These domains are utilised in interdisciplinary research to devise innovative solutions in agriculture, healthcare, and other critical developmental value chains."
     },
     {
-        imageSrc: "/images/profiles/nana.jpg",
+        imageSrc: "/images/profiles/adoma.png",
         name: "Nana Adoma Fredua Antoh",
         slug: "adoma-fredua-antoh",
         title: "Director of Legal Affairs",
