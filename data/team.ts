@@ -15,6 +15,13 @@ const teamMembers = [
         bio: "Dr. Eric Tutu Tchao, Senior Lecturer in Computer Engineering at KNUST, directs the operational and strategic initiatives of AINAS. His expertise encompasses telecommunications, blockchain, IoT, and AI, with a focus on sustainable development and community engagement across Africa. Dr. Tchao's contributions extend to global research through his involvement with the Responsible AI Lab (RAIL), IEEE and the Internet Society."
     },
     {
+        imageSrc: "/images/profiles/aline.jpg",
+        name: "Ms. Aline Adamou Barry",
+        slug: "aline-adamou-barry",
+        title: "Administrator",
+        bio: "Aline Adamou Barry is an experienced administrative and project management professional with over 15 years in international development. As the Administrator for the African Initiative for Nature-Based Solutions (AINAS), she oversees operational efficiency, project coordination, and stakeholder engagement. With expertise in administrative management, travel coordination, and event planning, she has worked with global organizations such as PATH, FARA, and USAID. A bilingual professional fluent in English and French, Aline plays a key role in ensuring smooth program execution and fostering collaborations across Africa and beyond."
+    },
+    {
         imageSrc: "/images/profiles/enoch.jpeg",
         name: "Dr. Enoch Bessah",
         slug: "enoch-bessah",
@@ -27,6 +34,13 @@ const teamMembers = [
         slug: "andrew-selasi-agbemenu",
         title: "Director of Technology & Innovation",
         bio: "Dr. Andrew Selasi Agbemenu holds the position of Senior Lecturer in the Department of Computer Engineering and is a qualified professional engineer. Additionally, he is the Deputy Director of the Distributed IoT-Platforms, Privacy, and Edge-Intelligence Research (DIPPER) Lab. Dr. Agbemenu’s research interests encompass analog and mixed-signal integrated circuits, sensor design, blockchain, Internet of Things (IoT), artificial intelligence (AI), and machine learning. These domains are utilised in interdisciplinary research to devise innovative solutions in agriculture, healthcare, and other critical developmental value chains."
+    },
+    {
+        imageSrc: "/images/profiles/nana.jpg",
+        name: "Nana Adoma Fredua Antoh",
+        slug: "adoma-fredua-antoh",
+        title: "Director of Legal Affairs",
+        bio: "Nana Antoh oversees all legal matters and ensures compliance with regulatory requirements across AINAS's operations."
     },
     {
         imageSrc: "/images/profiles/angela.jpg",
@@ -64,16 +78,9 @@ const teamMembers = [
         bio: "Mr. Kottey manages AINAS's financial operations and ensures effective resource allocation across all projects and initiatives."
     },
     {
-        imageSrc: "/images/profiles/nana.jpg",
-        name: "Nana Adoma Fredua Antoh",
-        slug: "adoma-fredua-antoh",
-        title: "Director of Legal Affairs",
-        bio: "Nana Antoh oversees all legal matters and ensures compliance with regulatory requirements across AINAS's operations."
-    },
-    {
-        imageSrc: "https://via.placeholder.com/300x300.png?text=Dr.+Kofi+Konadu",
-        name: "Dr. Kofi Konadu",
-        slug: "kofi-konadu",
+        imageSrc: "/images/profiles/gifty.jpg",
+        name: "Dr. Gifty Attu",
+        slug: "gifty-attu",
         title: "Director of Environmental Sustainability",
         bio: "Dr. Konadu oversees AINAS's environmental sustainability programs, working to restore ecosystems and promote climate resilience across Africa."
     },
@@ -85,7 +92,7 @@ const teamMembers = [
         bio: "Ms. Lomotey leads the monitoring and evaluation of AINAS's projects to ensure effective implementation and impact assessment."
     },
     {
-        imageSrc: "https://via.placeholder.com/300x300.png?text=Dr.+Derek+Osakunor",
+        imageSrc: "/images/profiles/derek.jpg",
         name: "Dr. Derek Osakunor",
         slug: "derek-osakunor",
         title: "Director of Advocacy and Policy",
