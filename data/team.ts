@@ -4,7 +4,7 @@ const teamMembers = [
         name: "Dr. Caleb Melenya Ocansey",
         slug: "caleb-melenya-ocansey",
         title: "Founder & President",
-        bio: "Dr. Caleb Ocansey is an ecosystem monitoring expert and the founder of the African Initiative for Nature-Based Solutions (AINAS), dedicated to addressing Africa’s environmental challenges through sustainable solutions. With a Ph.D. in Soil Science from KNUST and extensive research experience across Africa and Europe, he specializes in ecosystem monitoring, land reclamation, climate resilience, and sustainable agriculture. He is actively involved in international collaborations, including the Responsible AI Lab (RAIL) and the European Joint Programme - Soil. Dr. Ocansey’s work bridges science and real-world impact, promoting sustainable land use and community-driven solutions.",
+        bio: "Dr. Caleb Ocansey is an ecosystem monitoring expert and the founder of the African Initiative for Nature-Based Solutions (AINAS), dedicated to addressing Africa's environmental challenges through sustainable solutions. With a Ph.D. in Soil Science from KNUST and extensive research experience across Africa and Europe, he specializes in ecosystem monitoring, land reclamation, climate resilience, and sustainable agriculture. He is actively involved in international collaborations, including the Responsible AI Lab (RAIL) and the European Joint Programme - Soil. Dr. Ocansey's work bridges science and real-world impact, promoting sustainable land use and community-driven solutions.",
         detail: "",
     },
     {
@@ -33,7 +33,14 @@ const teamMembers = [
         name: "Dr. Andrew Selasi Agbemenu",
         slug: "andrew-selasi-agbemenu",
         title: "Director of Technology & Innovation",
-        bio: "Dr. Andrew Selasi Agbemenu holds the position of Senior Lecturer in the Department of Computer Engineering and is a qualified professional engineer. Additionally, he is the Deputy Director of the Distributed IoT-Platforms, Privacy, and Edge-Intelligence Research (DIPPER) Lab. Dr. Agbemenu’s research interests encompass analog and mixed-signal integrated circuits, sensor design, blockchain, Internet of Things (IoT), artificial intelligence (AI), and machine learning. These domains are utilised in interdisciplinary research to devise innovative solutions in agriculture, healthcare, and other critical developmental value chains."
+        bio: "Dr. Andrew Selasi Agbemenu holds the position of Senior Lecturer in the Department of Computer Engineering and is a qualified professional engineer. Additionally, he is the Deputy Director of the Distributed IoT-Platforms, Privacy, and Edge-Intelligence Research (DIPPER) Lab. Dr. Agbemenu's research interests encompass analog and mixed-signal integrated circuits, sensor design, blockchain, Internet of Things (IoT), artificial intelligence (AI), and machine learning. These domains are utilised in interdisciplinary research to devise innovative solutions in agriculture, healthcare, and other critical developmental value chains."
+    },
+    {
+        imageSrc: "/images/profiles/angela.jpg",
+        name: "Dr. Angela Tabiri",
+        slug: "angela-tabiri",
+        title: "Director of Youth and Gender",
+        bio: "Dr. Tabiri, an award-winning science communicator and researcher in quantum algebra, empowers young minds in STEM through mentorship and outreach. As the Academic Manager for AIMS Ghana's Girls in Mathematical Sciences Program, she has guided over 100 high school girls toward STEM careers. She also leads Femafricmaths, an initiative promoting female African mathematicians, and actively contributes to global science communication efforts."
     },
     {
         imageSrc: "/images/profiles/adoma.png",
@@ -43,11 +50,27 @@ const teamMembers = [
         bio: "Nana Antoh oversees all legal matters and ensures compliance with regulatory requirements across AINAS's operations."
     },
     {
-        imageSrc: "/images/profiles/angela.jpg",
-        name: "Dr. Angela Tabiri",
-        slug: "angela-tabiri",
-        title: "Director of Youth and Gender",
-        bio: "Dr. Tabiri, an award-winning science communicator and researcher in quantum algebra, empowers young minds in STEM through mentorship and outreach. As the Academic Manager for AIMS Ghana's Girls in Mathematical Sciences Program, she has guided over 100 high school girls toward STEM careers. She also leads Femafricmaths, an initiative promoting female African mathematicians, and actively contributes to global science communication efforts."
+        imageSrc: "/images/profiles/derick.jpg",
+        name: "Dr. Derick Osakunor",
+        slug: "derick-osakunor",
+        title: "Director of Advocacy and Policy",
+        bio: "Dr. Derick Osakunor is a global health expert specializing in infection, immunity, and neglected tropical diseases (NTDs). With a Ph.D. in Infection and Immunology from the University of Edinburgh, his research has shaped national schistosomiasis control programs and WHO guidelines. He leads AINAS's advocacy and policy efforts for sustainable environmental practices. His work focuses on integrating research into health policy, improving universal healthcare, and developing behaviorally informed interventions for disease prevention, particularly in WASH-related conditions.",
+        detail: `
+        # Derick Osakunor, PhD, BCMAS
+
+        Dr. Derick Osakunor has a background in medical diagnostics, global health, infection, and immunity, with a particular focus on schistosome morbidity and immuno-epidemiology. He holds a PhD in Infection and Immunology from the University of Edinburgh, where he worked with the Parasite Immuno-epidemiology Group and the NIHR Global Health Research Unit TIBA (Tackling Infections to Benefit Africa).
+
+        Dr. Osakunor leads both basic and translational research with a significant impact on the policy, practice, and control of neglected tropical diseases (NTDs), as well as infectious and non-communicable diseases globally. His research has advanced our understanding of schistosomiasis, informed national schistosomiasis control programs, and contributed to WHO guidelines for verifying schistosomiasis control. His pioneering work on paediatric schistosomiasis has been instrumental in prioritizing and operationalizing treatment for children within WHO’s schistosomiasis elimination guidelines.
+
+        ## Research & Impact
+
+        His long-term goal is to shape health policy and planning by demonstrating how research findings can be integrated into existing health systems to improve universal healthcare.
+
+        As part of a multidisciplinary team, Dr. Osakunor is currently investigating the factors influencing disease epidemiology and quantifying the burden and impact of disease on overall health and quality of life. This work aims to:
+
+        - Develop locally informed, behaviourally consistent guidelines for designing and implementing complex disease interventions.
+        - Reduce disease transmission and establish a novel research framework for water, sanitation, and hygiene (WASH)-associated diseases.
+        `,
     },
     {
         imageSrc: "/images/profiles/konadu.jpg",
@@ -90,13 +113,6 @@ const teamMembers = [
         slug: "ivy-lomotey",
         title: "Director of Monitoring and Evaluation",
         bio: "Ms. Lomotey leads the monitoring and evaluation of AINAS's projects to ensure effective implementation and impact assessment."
-    },
-    {
-        imageSrc: "/images/profiles/derek.jpg",
-        name: "Dr. Derek Osakunor",
-        slug: "derek-osakunor",
-        title: "Director of Advocacy and Policy",
-        bio: "Dr. Osakunor leads AINAS's advocacy efforts and policy development initiatives to promote sustainable environmental practices."
     },
 ];
 
