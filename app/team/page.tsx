@@ -1,10 +1,10 @@
 import ListPageLayout from "@/components/layout/ListPageLayout";
 import TeamMember from "@/components/TeamMember";
-import { getMembers } from "@/data/team";
-// import Link from "next/link";
+import { getSortedTeamMembersData } from "@/lib/data-provider";
 
 const TeamPage = () => {
-    const teamMembers = getMembers();
+    const teamMembers = getSortedTeamMembersData();
+
     return (
         <ListPageLayout
             title="Meet Our Team"
@@ -12,17 +12,12 @@ const TeamPage = () => {
             bannerImage="/images/team-banner.webp"
         >
             {
-            teamMembers.map((member, _) => (
-                // <Link href={`/team/${member.slug}`} key={member.slug}>
+            teamMembers.map((member) => (
                 <TeamMember
                     key={member.slug}
                     showSummary={true}
-                    imageSrc={member.imageSrc}
-                    name={member.name}
-                    title={member.title}
-                    bio={member.bio}
-                    />
-               // </Link>
+                    data={member}
+                />
           ))}
         </ListPageLayout>
     );

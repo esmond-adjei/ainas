@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import { Facebook, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
-import CustomIcon from './CustomIcon';
+import { Facebook, Instagram, Linkedin, Mail, Phone, MapPin, Youtube, ArrowRight } from 'lucide-react';
+import { Logo } from './CustomIcon';
 import React from 'react';
 
 const CONTACTS = [
@@ -24,6 +24,48 @@ const CONTACTS = [
   },
 ];
 
+const quickLinks = [
+  {
+    label: 'home',
+    href: '/'
+  },
+  {
+    label: 'about',
+    href: '/about'
+  },
+  {
+    label: 'team',
+    href: '/team'
+  },
+  {
+    label: 'contact',
+    href: '/contact'
+  },
+  {
+    label: 'gallery',
+    href: '/gallery'
+  }
+];
+
+const socials = [
+  {
+    icon: Facebook,
+    href: 'https://facebook.com',
+  },
+  {
+    icon: Instagram,
+    href: 'https://instagram.com',
+  },
+  {
+    icon: Linkedin,
+    href: 'https://linkedin.com',
+  },
+  {
+    icon: Youtube,
+    href: 'https://youtube.com',
+  },
+];
+
 export default function Footer() {
   return (
     <footer className="bg-dark text-light pt-16">
@@ -34,45 +76,25 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Logo and Brief Description */}
           <div className="flex flex-col mb-4">
-
-            {/* <Link href="/" className="text-3xl w-max font-heading font-bold text-primary font-serif">
-              <CustomIcon className="size-16 mx-auto" style={{fill: 'var(--primary-color)'}}/>
-              AINAS
-            </Link> */}
-
-            <Link
-              href="/"
-              className={`flex gap-2 mb-2`}
-            >
-          <CustomIcon
-            className="size-12 inline-block"
-            style={{ fill: 'var(--secondary-color)'}}
-          />
-          <div className={`[&>*]:text-secondary`}>
-            <h1 className='text-3xl font-heading font-bold font-serif leading-7'>AINAS</h1>
-            <p className={`text-sm`}>
-              Africa Initiative for Nature-Based Solutions
-            </p>
-          </div>
-        </Link>
+            <Link href="/" className="mb-2 w-max">
+              <Logo theme='secondary'/>
+            </Link>
   
             <p className="heading-3 !text-base text-gray-300 max-w-full lg:max-w-xs">
               Empowering communities with sustainable, nature-based solutions for a greener tomorrow.
             </p>
 
             {/* Social Media Icons */}
-          <div>
-            <h3 className="heading-2 mt-4 mb-2">Follow Us</h3>
-            <div className="flex space-x-3">
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition">
-                <Linkedin size={20} />
-              </a>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition">
-                <Facebook size={20} />
-              </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition">
-                <Instagram size={20} />
-              </a>
+          <div className='mt-4'>
+            {/* <h3 className="heading-2mb-2">Follow Us</h3> */}
+            <div className="flex space-x-4">
+              {
+                socials.map((social, index) => (
+                  <a key={index} href={social.href} target="_blank" rel="noopener noreferrer" className="hover:text-primaryBright transition">
+                    <social.icon size={24} />
+                  </a>
+                ))
+              }
             </div>
           </div>
 
@@ -107,11 +129,14 @@ export default function Footer() {
           {/* Quick Links Section */}
           <div>
             <h3 className="heading-2 mb-4">Quick Links</h3>
-            <div className="flex gap-2 md:flex-col md:gap-4">
-              <Link href="/" className="block text-sm hover:text-primary transition">Home</Link>
-              <Link href="/about" className="block text-sm hover:text-primary transition">About</Link>
-              <Link href="/impact" className="block text-sm hover:text-primary transition">Impact</Link>
-              <Link href="/contact" className="block text-sm hover:text-primary transition">Contact</Link>
+            <div className="flex gap-2 md:flex-col">
+              {
+                quickLinks.map((link, index) => (
+                  <Link key={index} href={link.href} className="block text-sm hover:text-primaryBright w-max group">
+                  <ArrowRight className='inline opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all duration-200' size={16}/>  {link.label}
+                  </Link>
+                ))
+              }
             </div>
           </div>
 

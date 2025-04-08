@@ -73,17 +73,21 @@ type PageHeroProps = {
 
 export function PageHero({ title, description, backgroundImage }: PageHeroProps) {
   return (
-    <section className="relative flex flex-col justify-center h-[380px] text-white">
+    <section className="relative flex flex-col justify-center h-[380px] text-white bg-primary">
       {/* Background Image */}
-      <div className="absolute inset-0">
-        <Image
-          src={backgroundImage}
-          alt={`${title} Background`}
-          fill
-          className="object-cover object-center"
-          priority
-        />
-      </div>
+      {
+        backgroundImage && (
+        <div className="absolute inset-0">
+          <Image
+            src={backgroundImage}
+            alt={`${title} Background`}
+            fill
+            className="object-cover object-center"
+            priority
+          />
+        </div>
+        )
+      }
 
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-70"></div>

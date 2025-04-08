@@ -1,13 +1,13 @@
 import AnimatedSection from '@/components/AnimatedSection';
 import TeamMember from '@/components/TeamMember';
 import { ROUTES } from '@/lib';
-import { getMembers } from '@/data/team';
+import { getTeamMemberCount } from '@/lib/data-provider';
 import { ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 
-
 export default function OurTeam() {
-  const teamMembers = getMembers(4);
+  const teamMembers = getTeamMemberCount(4);
+  
   return (
     <AnimatedSection className="section bg-gray-100 text-center space-y-4">
       <div className="max-w-3xl mx-auto">
@@ -18,9 +18,9 @@ export default function OurTeam() {
       </div>
 
       <Link
-            href={ROUTES.team}
-            className='mx-auto w-max hcc gap-0 hover:gap-4 px-4 py-2 rounded-full bg-green-200 text-primary transition-all duration-200'
-          >Our Team <ChevronRight size={24}/>
+        href={ROUTES.team}
+        className='mx-auto w-max hcc gap-0 hover:gap-4 px-4 py-2 rounded-full bg-green-200 text-primary transition-all duration-200'
+        >Our Team <ChevronRight size={24}/>
       </Link>
 
       {/* Team Members Grid */}
@@ -28,11 +28,7 @@ export default function OurTeam() {
         {teamMembers.map((member, index) => (
           <TeamMember
             key={index}
-            imageSrc={member.imageSrc}
-            name={member.name}
-            title={member.title}
-            bio={member.bio}
-            showSummary={false}
+            data={member}
           />
         ))}
       </div>

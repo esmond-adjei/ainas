@@ -1,6 +1,6 @@
 import { PageHero } from '@/components/landing-page/HeroSection';
 import { BackButton } from '@/components/BackButton';
-import { getAllPostIds, getPostData } from '@/lib/blog';
+import { getAllPostIds, getPostData } from '@/lib/data-provider';
 
 export async function generateStaticParams() {
   const paths = getAllPostIds();
@@ -32,7 +32,6 @@ export default async function Post({ params }: { params: { id: string } }) {
 
         <article className="max-w-3xl mx-auto">
           <header className="mb-8">
-            {/* <h1 className="text-3xl md:text-4xl font-serif font-bold mb-4">{post.title}</h1> */}
             <div className="flex flex-wrap gap-3 items-center text-gray-600">
               <time className="text-sm">{new Date(post.date).toLocaleDateString()}</time>
               {post.author && (
@@ -50,19 +49,11 @@ export default async function Post({ params }: { params: { id: string } }) {
             </div>
           </header>
 
-          {/* {post.coverImage && (
-            <div className="mb-8">
-              <img
-                src={post.coverImage}
-                alt={post.title}
-                className="w-full h-auto rounded-lg" />
-            </div>
-          )} */}
-
           <div
             className="prose prose-lg max-w-none font-serif leading-tight"
             dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
         </article>
-      </div></>
+      </div>
+    </>
   );
 }

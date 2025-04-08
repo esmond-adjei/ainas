@@ -1,14 +1,14 @@
-'use client';
-import { useParams } from 'next/navigation';
 import { notFound } from 'next/navigation';
 import Section from '@/components/SectionLayout';
-import { getMember } from '@/data/team';
+import { getTeamMemberBySlug } from '@/lib/data-provider';
 import { PageHero } from '@/components/landing-page/HeroSection';
 import { BackButton } from '@/components/BackButton';
 
-const TeamMemberDetail = () => {
-  const { name } = useParams();
-  const member = getMember(decodeURIComponent(name as string))
+const TeamMemberDetail = async (
+  { params }: { params: { name: string } }
+) => {
+  const { name } = await params;
+  const member = getTeamMemberBySlug(decodeURIComponent(name));
 
   if (!member) {
     return notFound();
@@ -28,14 +28,37 @@ const TeamMemberDetail = () => {
       <img
         src={member.imageSrc}
         alt={member.name}
-        className="w-[600px] h-[400px] object-contain bg-transparent mx-auto mb-8"
+        className="h-[400px] object-contain bg-transparent mb-8"
         />
 
       <div>
         <h1 className="heading-2">{member.name}</h1>
         <h2 className="text-primary font-medium text-base mb-2">{member.title}</h2>
         
-        <p className="md:text-justify text-gray-700 leading-relaxed">{member.bio}</p>
+        <div 
+          className="md:text-justify text-gray-700 leading-relaxed prose"
+          dangerouslySetInnerHTML={{ __html: member.contentHtml }}
+        />
+        
+        {member.socialLinks && (
+          <div className="mt-8 flex gap-4">
+            {member.socialLinks.linkedin && (
+              <a href={member.socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primaryBright">
+                LinkedIn
+              </a>
+            )}
+            {member.socialLinks.twitter && (
+              <a href={member.socialLinks.twitter} target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primaryBright">
+                Twitter
+              </a>
+            )}
+            {member.socialLinks.email && (
+              <a href={`mailto:${member.socialLinks.email}`} className="text-primary hover:text-primaryBright">
+                Email
+              </a>
+            )}
+          </div>
+        )}
       </div>
       </div>
     </Section>

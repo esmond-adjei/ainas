@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import React from "react";
 
 const CustomIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
@@ -57,4 +58,49 @@ const CustomIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
 </svg>
 );
 
-export default CustomIcon;
+export function Logo(
+  {theme = "primary", size = "medium"}:
+  {theme?: "primary" | "secondary" | "white" | "black", size?: "large" | "medium" | "small"}
+) {
+  const colorVariable = 
+    theme === "white" ? "white" : 
+    theme === "black" ? "black" : 
+    theme === "secondary" ? "var(--secondary-color)" : 
+    "var(--primary-color)";
+
+  const childTextColorClass = {
+    white: "[&>*]:text-white",
+    black: "[&>*]:text-black",
+    secondary: "[&>*]:text-secondary",
+    primary: "[&>*]:text-primary"
+  }[theme];
+
+  return (
+    <div className="hcc gap-1">
+      <CustomIcon
+        className={cn("inline-block",
+          size === "large" ? "size-24" :
+          size === "medium" ? "size-12" :
+          size === "small" ? "size-8" : ""
+        )}
+        style={{ fill: colorVariable }}
+      />
+      <div className={cn(childTextColorClass)}>
+        <h1 className={cn("font-heading font-bold font-serif tracking-widest",
+          size === "large" ? "text-5xl" :
+          size === "medium" ? "text-3xl leading-6" :
+          size === "small" ? "text-xl leading-4" : ""
+        )}>
+          AINAS
+        </h1>
+        <p className={cn(
+          size === "large" ? "text-lg leading-4" :
+          size === "medium" ? "text-xs leading-3" :
+          size === "small" ? "text-[0.5rem] leading-none" : "",
+        )}>
+          African Initiative for <br /> Nature-Based Solutions
+        </p>
+      </div>
+    </div>
+  );
+}
