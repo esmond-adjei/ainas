@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { PageHero } from "@/app/(home)/components/HeroSection";
+import { PageHero } from "@/components/landing-page/HeroSection";
 
 
 export default function ListPageLayout({

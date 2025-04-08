@@ -1,4 +1,4 @@
-import ListPageLayout from "@/components/ListPageLayout";
+import ListPageLayout from "@/components/layout/ListPageLayout";
 import TeamMember from "@/components/TeamMember";
 import { getMembers } from "@/data/team";
 // import Link from "next/link";

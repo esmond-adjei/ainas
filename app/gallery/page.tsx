@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import ListPageLayout from '@/components/ListPageLayout';
+import ListPageLayout from '@/components/layout/ListPageLayout';
 import GalleryViewer, { GalleryImage } from '@/components/GalleryViewer';
 import React from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';

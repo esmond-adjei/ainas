@@ -3,7 +3,7 @@ import { useParams } from 'next/navigation';
 import { notFound } from 'next/navigation';
 import Section from '@/components/SectionLayout';
 import { getMember } from '@/data/team';
-import { PageHero } from '@/app/(home)/components/HeroSection';
+import { PageHero } from '@/components/landing-page/HeroSection';
 import { BackButton } from '@/components/BackButton';
 
 const TeamMemberDetail = () => {
@@ -24,9 +24,7 @@ const TeamMemberDetail = () => {
     <Section className='relative'>
     <BackButton className="absolute left-10" />
 
-    <div 
-      className='flex gap-10 flex-col md:flex-row'
-    >
+    <div className='flex gap-10 flex-col md:flex-row'>
       <img
         src={member.imageSrc}
         alt={member.name}

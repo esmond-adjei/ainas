@@ -114,7 +114,7 @@ const teamMembers: MemberDetails[] = [
         name: "Dr. Gifty Attu",
         slug: "gifty-attu",
         title: "Director of Environmental Sustainability",
-        bio: "Dr. Konadu oversees AINAS's environmental sustainability programs, working to restore ecosystems and promote climate resilience across Africa."
+        bio: "Dr. Gifty Nyarko is a fisheries scientist and Director of Environmental Sustainability at the African Initiative for Nature-Based Solutions (AINAS), where she leads efforts to promote conservation and sustainable use of aquatic resources across Africa. Her research focuses on the intersection of fish and people, aiming to balance conservation with food security. As a PhD fellow at Virginia Tech’s Interfaces of Global Change program, her award-winning work uncovered the farming of unapproved tilapia strains in Ghana. She has led diverse projects across aquaculture, genetics, and fisheries economics in Ghana and Cameroon. Gifty currently works as a researcher and consultant, volunteering with CART4D to further her impact on fisheries sustainability and policy."
     },
     {
         imageSrc: "/images/profiles/ivy.jpg",

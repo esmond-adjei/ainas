@@ -10,7 +10,7 @@ import {
   Award,
   ChevronRight
 } from 'lucide-react';
-import { PageHero } from '../../(home)/components/HeroSection';
+import { PageHero } from '../../../components/landing-page/HeroSection';
 import { ExpandableSection } from '@/components/ExpandableSection';
 import Section from '@/components/SectionLayout';
 import Link from 'next/link';
@@ -75,14 +75,12 @@ const Values = [
 ];
 
 
-// Shared styles as constants to improve consistency and reusability
 const STYLES = {
   text: 'mb-4',
   icon: 'size-12 text-primary mb-4',
   heading: 'text-2xl font-semibold mb-4',
 };
 
-// Extract reusable components with clear, single responsibilities
 const CoreValueCard: React.FC<CoreValueCardProps> = ({ 
   icon: Icon, 
   title, 
