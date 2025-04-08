@@ -69,7 +69,7 @@ const TeamMemberModal: React.FC<TeamMemberModalProps> = ({
         >
         <div
           ref={modalRef}
-          className="bg-white h-max-[90vh] overflow-y-auto p-8 rounded-lg max-w-lg shadow-lg relative"
+          className="bg-white max-h-[90vh] max-w-lg overflow-y-auto p-8 rounded-lg shadow-lg relative"
         >
           <img
            src='/cross-circle-bloat.svg'
@@ -91,7 +91,7 @@ const TeamMemberModal: React.FC<TeamMemberModalProps> = ({
             />
             <div>
               <h3 className="text-2xl text-left font-semibold mb-2">{name}</h3>
-              <p className="text-gray-600 text-sm w-max px-3 py-1 rounded-3xl bg-slate-200">{title}</p>
+              <p className="text-gray-600 text-sm w-max px-3 py-1 rounded-3xl bg-slate-200 max-w-[400px] truncate">{title}</p>
             </div>
           </div>
 

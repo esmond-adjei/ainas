@@ -12,10 +12,10 @@ const TeamPage = () => {
             bannerImage="/images/team-banner.webp"
         >
             {
-            teamMembers.map((member, index) => (
-                // <Link href={`/team/${member.slug}`} key={index}>
+            teamMembers.map((member, _) => (
+                // <Link href={`/team/${member.slug}`} key={member.slug}>
                 <TeamMember
-                    key={index}
+                    key={member.slug}
                     showSummary={true}
                     imageSrc={member.imageSrc}
                     name={member.name}
