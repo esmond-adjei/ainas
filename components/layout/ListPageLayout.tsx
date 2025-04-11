@@ -18,7 +18,6 @@ export default function ListPageLayout({
 }>) {
   return (
     <>
-      <Navbar />
       <PageHero 
         title={title}
         description={subtitle}
@@ -33,7 +32,6 @@ export default function ListPageLayout({
                 otherChildren 
               }
         </main>
-      <Footer/>
     </> 
   );
 }
