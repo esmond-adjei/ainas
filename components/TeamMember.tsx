@@ -1,35 +1,23 @@
 'use client';
 
+import { TeamMemberData } from '@/lib/data-provider';
 import { motion } from 'framer-motion';
 import { X } from 'lucide-react';
+import Link from "next/link";
+
 import { useState, useEffect, useRef } from 'react';
 
-
-interface TeamMemberProps {
-  imageSrc: string;
-  name: string;
-  title: string;
-  bio: string;
-  showSummary?: boolean;
-}
-
-interface TeamMemberModalProps extends TeamMemberProps {
-  imageSrc: string;
-  name: string;
+interface TeamMemberModalProps {
+  data: TeamMemberData;
   openModal: boolean;
   setOpenedModal: (value: boolean) => void;
-  title: string;
-  bio: string;
 }
 
 
 const TeamMemberModal: React.FC<TeamMemberModalProps> = ({
+  data,
   openModal,
   setOpenedModal,
-  imageSrc,
-  name,
-  title,
-  bio,
 }) => {
   const modalRef = useRef<HTMLDivElement | null>(null);
 
@@ -85,40 +73,65 @@ const TeamMemberModal: React.FC<TeamMemberModalProps> = ({
 
           <div className='flex gap-4 justify-start'>
             <img
-              src={imageSrc}
-              alt={name}
+              src={data.imageSrc}
+              alt={data.name}
               className="size-32 shrink-0 rounded-full object-cover object-top bg-gray-400 filter grayscale"
             />
             <div>
-              <h3 className="text-2xl text-left font-semibold mb-2">{name}</h3>
-              <p className="text-gray-600 text-sm w-max px-3 py-1 rounded-3xl bg-slate-200 max-w-[400px] truncate">{title}</p>
+              <h3 className="text-2xl text-left font-semibold mb-2">{data.name}</h3>
+              <p className="text-gray-600 text-sm w-max px-3 py-1 rounded-3xl bg-slate-200 max-w-[400px] truncate">{data.title}</p>
             </div>
           </div>
 
-          <p className="py-4">{bio}</p>
+          <p className="py-4">{data.summary}</p>
+          {
+            !data.isEmpty && (
+              <span className='text-primaryBright font-semibold'>
+                <Link href={`/team/${data.slug}`} className='hover:underline'>View Profile</Link>
+              </span>
+            )
+          }
         </div>
         </motion.div>
     </motion.div>
   );
 };
 
-const TeamMember: React.FC<TeamMemberProps> = ({ imageSrc, name, title, bio, showSummary=true }) => {
+const TeamMember: React.FC<{
+  showSummary?: boolean;
+  data: TeamMemberData;
+}> = ({ data, showSummary=true }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
 
+
   return (
     <>
       <div 
-        className="bg-gray-200 relative cursor-pointer w-[300px] h-[400px] hover:shadow-2xl hover:-translate-y-2 transition-all duration-200 bg-cover bg-center" 
+        className="bg-gray-200 relative cursor-pointer w-[300px] h-[400px] group hover:shadow-2xl hover:-translate-y-2 transition-all duration-200 bg-cover bg-center" 
         onClick={toggleModal}
-        style={{backgroundImage: `url(${imageSrc})`}}
+        style={{backgroundImage: `url(${data?.imageSrc})`}}
       >
           <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent py-4 px-6">
-            <h3 className="text-white font-semibold">{name}</h3>
-            <p className="text-light text-sm">{title}</p>
+            <h3 className="text-white font-semibold">
+              { !data.isEmpty ?
+              <Link 
+                href={`/team/${data.slug}`} 
+                className="underline group-hover:text-primaryBright"
+                onClick={
+                  (e: React.MouseEvent) => {
+                    e.stopPropagation();
+                  }
+                }
+                >{data.name}
+              </Link> :
+              data.name
+              }
+            </h3>
+            <p className="text-light text-sm">{data.title}</p>
           </div>
       </div>
 
@@ -127,11 +140,8 @@ const TeamMember: React.FC<TeamMemberProps> = ({ imageSrc, name, title, bio, sho
         showSummary && (
           <TeamMemberModal 
             openModal={isModalOpen} 
-            setOpenedModal={setIsModalOpen} 
-            imageSrc={imageSrc} 
-            name={name} 
-            title={title} 
-            bio={bio} 
+            setOpenedModal={setIsModalOpen}
+            data={data}
           />
         )
       }

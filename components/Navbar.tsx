@@ -4,10 +4,11 @@ import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ChevronDown, ChevronUp, Menu, X } from 'lucide-react';
-import CustomIcon from './CustomIcon';
 import { ExpandableSection } from './ExpandableSection';
 import { ROUTES } from '@/lib';
 import { usePathname } from 'next/navigation';
+import { Logo } from './CustomIcon';
+import { cn } from '@/lib/utils';
 
 interface DropDownMenuItemProps {
   open: boolean;
@@ -20,6 +21,7 @@ interface DropDownMenuItemProps {
 interface NavItem {
   name: string;
   path: string;
+  disabled?: boolean;
 }
 
 interface DropdownItem extends NavItem {
@@ -31,13 +33,14 @@ const NAV_ITEMS: (NavItem | DropdownItem)[] = [
   { name: 'About', path: ROUTES.about },
   { name: 'Team', path: ROUTES.team },
   { name: 'Contact', path: ROUTES.contact },
+  { name: 'Gallery', path: ROUTES.gallery },
   {
     name: 'Explore',
     path: '',
     items: [
-      { name: 'Gallery', path: ROUTES.gallery },
-      { name: 'Our Impact', path: ROUTES.impact },
-      { name: 'Reports', path: ROUTES.report },
+      { name: 'Our Impact', path: ROUTES.impact, disabled: true },
+      { name: 'Blog', path: ROUTES.blog, disabled: true },
+      { name: 'Reports', path: ROUTES.report, disabled: true },
     ],
   },
 ];
@@ -93,7 +96,7 @@ const DropDownMenuItem: React.FC<DropDownMenuItemProps> = ({
   );
 };
 
-const NavMenu: React.FC<{ isScrolled: boolean, isActive: (route: string) => {} }> = ({ isScrolled,isActive }) => {
+const MobileNavMenu: React.FC<{ isScrolled: boolean, isActive: (route: string) => {} }> = ({ isScrolled,isActive }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
@@ -128,7 +131,7 @@ const NavMenu: React.FC<{ isScrolled: boolean, isActive: (route: string) => {} }
       >
         <div
           ref={menuRef}
-          className="drawer [&>*]:block space-y-6 flex flex-col px-10 py-4 pt-8 text-dark bg-white backdrop-blur-lg rounded-b-3xl shadow-lg"
+          className="drawer [&>*]:block space-y-2 flex flex-col px-10 py-4 pt-8 text-dark bg-white backdrop-blur-lg rounded-b-3xl shadow-lg"
           aria-expanded={mobileMenuOpen}
           style={{
             ['--drawer-height-final' as any]: '100%',
@@ -141,13 +144,16 @@ const NavMenu: React.FC<{ isScrolled: boolean, isActive: (route: string) => {} }
             key={index}
             title="Explore" 
             variant="dropdown" 
-            className="menu-item !m-0 !border-none"
+            className="menu-item m-0 !border-none"
             >
               {item.items.map((subItem, subIndex) => (
                 <Link
                   key={subIndex}
-                  href={subItem.path}
-                  className="block px-4 py-2 hover:bg-gray-200"
+                  href={subItem.disabled ? '#' : subItem.path}
+                  aria-disabled={subItem.disabled}
+                  className={cn("block px-4 py-2",
+                     subItem.disabled ? "text-zinc-400 cursor-not-allowed" : "hover:bg-gray-200"
+                  )}
                   role="menuitem"
                 >
                   {subItem.name}
@@ -157,8 +163,12 @@ const NavMenu: React.FC<{ isScrolled: boolean, isActive: (route: string) => {} }
           ) : (
             <Link
               key={index}
-              href={item.path}
-              className={isActive(item.path) ? `menu-item active`: `menu-item`}
+              href={item.disabled ? '#' : item.path}
+              aria-disabled={item.disabled}
+              className={cn("block px-4 py-2",
+                item.disabled ? "text-zinc-400 cursor-not-allowed" : "hover:bg-gray-200",
+                isActive(item.path) ? `menu-item active`: `menu-item`
+             )}
             >
               {item.name}
             </Link>
@@ -199,24 +209,8 @@ export default function Navbar() {
       transition={{ duration: 0.5 }}
     >
       <div>
-        <Link
-          href="/"
-          className={`flex gap-2`}
-        >
-          <CustomIcon
-            className="size-12 inline-block"
-            style={{
-              fill: isScrolled ? 'var(--primary-color)' : 'white',
-            }}
-          />
-          <div className={`${
-              isScrolled ? '[&>*]:text-primary' : '[&>*]:text-light'
-            }`}>
-            <h1 className='text-3xl font-heading font-bold font-serif leading-7'>AINAS</h1>
-            <p className={`text-sm`}>
-              Africa Initiative for Nature-Based Solutions
-            </p>
-          </div>
+        <Link href="/">
+          <Logo theme={isScrolled ? 'primary' : 'white'} />
         </Link>
       </div>
 
@@ -233,8 +227,11 @@ export default function Navbar() {
               {item.items.map((subItem, index) => (
                 <Link
                   key={index}
-                  href={subItem.path}
-                  className="block px-4 py-2 hover:bg-gray-200"
+                  href={subItem.disabled ? '#' : subItem.path}
+                  aria-disabled={subItem.disabled}
+                  className={cn("block px-4 py-2",
+                    subItem.disabled ? "text-zinc-400 cursor-not-allowed" : "hover:bg-gray-200"
+                  )}
                   role="menuitem"
                 >
                   {subItem.name}
@@ -244,8 +241,13 @@ export default function Navbar() {
           ) : (
             <Link
               key={item.path}
-              href={item.path}
-              className={isActive(item.path) ? `${navTheme} active` : navTheme}
+              href={item.disabled ? '#' : item.path}
+              aria-disabled={item.disabled}
+              className={cn(
+                item.disabled ? 'text-zinc-400 cursor-not-allowed' : navTheme,
+                isActive(item.path) ? 'active' : ''
+              )}
+              role="menuitem"
             >
               {item.name}
             </Link>
@@ -260,7 +262,7 @@ export default function Navbar() {
         </Link>
       </div>
 
-      <NavMenu isScrolled={isScrolled} isActive={isActive} />
+      <MobileNavMenu isScrolled={isScrolled} isActive={isActive} />
     </motion.header>
   );
 }
