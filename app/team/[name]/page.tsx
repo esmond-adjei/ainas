@@ -4,9 +4,11 @@ import { getTeamMemberBySlug } from '@/lib/data-provider';
 import { PageHero } from '@/components/landing-page/HeroSection';
 import { BackButton } from '@/components/BackButton';
 
-export async function generateMetadata(
-  { params }: { params: { name: string} }
-) {
+
+type Params = Promise<{ name: string }>
+
+
+export async function generateMetadata({ params }: { params: Params }) {
   const resolvedParams = await params;
   const member = getTeamMemberBySlug(decodeURIComponent(resolvedParams.name));
 
@@ -19,9 +21,7 @@ export async function generateMetadata(
 }
 
 
-const TeamMemberDetail = async (
-  { params }: { params: { name: string } }
-) => {
+const TeamMemberDetail = async ({ params }: { params: Params }) => {
   const resolvedParams = await params;
   const member = getTeamMemberBySlug(decodeURIComponent(resolvedParams.name));
 

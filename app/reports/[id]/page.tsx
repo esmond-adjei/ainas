@@ -7,9 +7,9 @@ export async function generateStaticParams() {
   return paths;
 }
 
-export async function generateMetadata(
-  { params }: { params: { id: string } }
-) {
+type Params = Promise<{ id: string }>
+
+export async function generateMetadata({ params }: { params: Params }) {
   const resolvedParams = await params;
   const report = await getReportData(decodeURIComponent(resolvedParams.id));
   return {
@@ -18,7 +18,7 @@ export async function generateMetadata(
   };
 }
 
-export default async function Report({ params }: { params: { id: string } }) {
+export default async function Report({ params }: { params: Params }) {
   const resolvedParams = await params;
   const report = await getReportData(decodeURIComponent(resolvedParams.id));
   
