@@ -4,11 +4,26 @@ import { getTeamMemberBySlug } from '@/lib/data-provider';
 import { PageHero } from '@/components/landing-page/HeroSection';
 import { BackButton } from '@/components/BackButton';
 
+export async function generateMetadata(
+  { params }: { params: { name: string} }
+) {
+  const resolvedParams = await params;
+  const member = getTeamMemberBySlug(decodeURIComponent(resolvedParams.name));
+
+  if (member) {
+    return {
+      title: `${member.name} - AINAS member`,
+      description: member.bio || member.title
+    }
+  }
+}
+
+
 const TeamMemberDetail = async (
   { params }: { params: { name: string } }
 ) => {
-  const { name } = await params;
-  const member = getTeamMemberBySlug(decodeURIComponent(name));
+  const resolvedParams = await params;
+  const member = getTeamMemberBySlug(decodeURIComponent(resolvedParams.name));
 
   if (!member) {
     return notFound();

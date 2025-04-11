@@ -4,7 +4,7 @@ import ListPageLayout from '@/components/layout/ListPageLayout';
 import { BlogCard } from '@/components/BlogCard';
 
 export const metadata = {
-  title: 'Blog - Ainas',
+  title: 'Blog - AINAS',
   description: 'Read our latest blog posts on sustainable development and community initiatives.',
 };
 

@@ -7,18 +7,23 @@ export async function generateStaticParams() {
   return paths;
 }
 
-export async function generateMetadata({ params }: { params: { id: string } }) {
-  const { id } = await params;
-  const post = await getPostData(id);
+export async function generateMetadata(
+  { params }: { params: { id: string } }
+) {
+  const resolvedParams = await params;
+  const post = await getPostData(decodeURIComponent(resolvedParams.id));
   return {
-    title: `${post.title} - Ainas Blog`,
+    title: `${post.title} - AINAS Blog`,
     description: post.excerpt || `Read our blog post about ${post.title}`,
   };
 }
 
-export default async function Post({ params }: { params: { id: string } }) {
-  const { id } = await params;
-  const post = await getPostData(id);
+
+export default async function Post(
+  { params }: { params: { id: string } }
+) {
+  const resolvedParams = await params;
+  const post = await getPostData(decodeURIComponent(resolvedParams.id));
   
   return (
     <><PageHero

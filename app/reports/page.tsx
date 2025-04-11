@@ -4,7 +4,7 @@ import ListPageLayout from '@/components/layout/ListPageLayout';
 import { ReportCard } from '@/components/ReportCard';
 
 export const metadata = {
-  title: 'Reports - Ainas',
+  title: 'Reports - AINAS',
   description: 'Access our detailed reports on projects, initiatives, and impact assessment.',
 };
 

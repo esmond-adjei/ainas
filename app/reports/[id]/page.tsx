@@ -1,25 +1,26 @@
 import { BackButton } from '@/components/BackButton';
 import { PageHero } from '@/components/landing-page/HeroSection';
 import { getAllReportIds, getReportData } from '@/lib/data-provider';
-import Link from 'next/link';
 
 export async function generateStaticParams() {
   const paths = getAllReportIds();
   return paths;
 }
 
-export async function generateMetadata({ params }: { params: { id: string } }) {
-  const { id } = await params;
-  const report = await getReportData(id);
+export async function generateMetadata(
+  { params }: { params: { id: string } }
+) {
+  const resolvedParams = await params;
+  const report = await getReportData(decodeURIComponent(resolvedParams.id));
   return {
-    title: `${report.title} - Ainas Reports`,
+    title: `${report.title} - AINAS Reports`,
     description: report.excerpt || `View our detailed report on ${report.title}`,
   };
 }
 
 export default async function Report({ params }: { params: { id: string } }) {
-  const { id } = await params;
-  const report = await getReportData(id);
+  const resolvedParams = await params;
+  const report = await getReportData(decodeURIComponent(resolvedParams.id));
   
   return (
         <><PageHero

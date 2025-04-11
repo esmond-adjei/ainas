@@ -1,13 +1,13 @@
 ---
 title: 'Welcome to Our Blog'
 date: '2023-04-01'
-author: 'Ainas Team'
+author: 'AINAS Team'
 excerpt: 'An introduction to our blog and what you can expect from our content.'
 coverImage: '/images/gallery/lagoon-resort.jpg'
 category: 'Announcement'
 ---
 
-# Welcome to the Ainas Blog
+# Welcome to the AINAS Blog
 
 We're excited to launch our official blog where we'll be sharing updates about our projects, insights on sustainable development, and stories from the communities we work with.
 
