@@ -20,7 +20,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'About AINAS | Our Mission, Vision, and Values',
   description:
-    'Learn about the African Initiative for Nature-Based Solutions (AINAS). Discover our mission to empower African communities, our vision for a sustainable Africa, and the core values that drive our work in nature-based solutions.',
+    'We is an NGO dedicated to promoting sustainable development of Africa through the implementation and advocacy of nature-based solutions (NBS).',
   keywords: [
     'AINAS',
     'About AINAS',
@@ -149,14 +149,14 @@ const AboutUsPage: React.FC = () => {
             <Globe className={STYLES.icon} />
             <h2 className={STYLES.heading}>Our Vision</h2>
             <p className={STYLES.text}>
-              AINAS's vision is to see a prosperous and sustainable Africa powered by nature-based solutions.
+              Our vision is to see a prosperous and sustainable Africa powered by nature-based solutions.
             </p>
           </div>
           <div>
             <Target className={STYLES.icon} />
             <h2 className={STYLES.heading}>Our Mission</h2>
             <p className={STYLES.text}> 
-              AINAS's mission is to empower rural and urban African communities to develop and implement 
+              We are on a mission to empower rural and urban African communities to develop and implement 
               sustainable nature-based solutions that improve livelihoods and protect 
               the environment for current and future generations.
             </p>

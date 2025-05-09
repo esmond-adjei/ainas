@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     title: 'AINAS | African Initiative for Nature-Based Solutions',
     description:
       'AINAS: Driving sustainable change in Africa through nature-based solutions. Learn how we empower communities and restore ecosystems.',
-    images: ['/images/hero-bg.webp', '/images/visual-impact.webp'],
+    images: ['/images/hero-bg.webp'],
   },
 };
 

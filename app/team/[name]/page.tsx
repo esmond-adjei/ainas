@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: { params: Params }) {
   }
 
   const pageTitle = `${member.name} | Team | AINAS`;
-  const pageDescription = member.bio || `Learn more about ${member.name}, ${member.title} at AINAS.`;
+  const pageDescription = member.bio || `${member.name}, ${member.title} at AINAS.`;
   const pageUrl = `https://www.ainas.org/team/${encodeURIComponent(member.slug || resolvedParams.name)}`;
   const imageUrl = member.imageSrc.startsWith('http') ? member.imageSrc : `https://www.ainas.org${member.imageSrc}`;
 
