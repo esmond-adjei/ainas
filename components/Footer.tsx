@@ -1,28 +1,10 @@
 import Link from 'next/link';
-import { Facebook, Instagram, Linkedin, Mail, Phone, MapPin, Youtube, ArrowRight } from 'lucide-react';
+import { Facebook, Instagram, Linkedin, Youtube, ArrowRight } from 'lucide-react';
 import { Logo } from './CustomIcon';
 import React from 'react';
+import { CONTACTS } from '@/data/location';
 
-const CONTACTS = [
-  {
-    icon: Mail,
-    title: "Email",
-    content: "support@ainas.org",
-    href: "mailto:support@ainas.org",
-  },
-  {
-    icon: Phone,
-    title: "Phone",
-    content: "+233 24 000 0000",
-    href: "https://wa.me/+233240000000",
-  },
-  {
-    icon: MapPin,
-    title: "Location",
-    content: "M0435 NSROMA ST,\nCX-020-2382,\nKasoa, Ghana",
-    multiline: true,
-  },
-];
+
 
 const quickLinks = [
   {

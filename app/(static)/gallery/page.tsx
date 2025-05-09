@@ -55,7 +55,7 @@ export default function GalleryPage() {
             <div className='space-y-4' key={colIndex}>
               {columnImages.map((image, rowIndex) => {
                 const imageIndexInPage = colIndex + rowIndex * 4;
-                const actualImageIndex = imageIndexInPage; // Now using page-relative index
+                const actualImageIndex = imageIndexInPage;
                 return (
                   <div
                     key={startIndex + actualImageIndex}

@@ -3,6 +3,7 @@ import { Mail, Phone, MapPin } from 'lucide-react';
 import { ExpandableSection } from '@/components/ExpandableSection';
 import Section from '@/components/SectionLayout';
 import { PageHero } from '@/components/landing-page/HeroSection';
+import { CONTACTS } from '@/data/location';
 
 
 const FAQS = [
@@ -36,27 +37,6 @@ const FAQS = [
   }
 ];
 
-const CONTACTS = [
-  {
-    icon: Mail,
-    title: "Email",
-    content: "support@ainas.org",
-    href: "mailto:support@ainas.org",
-  },
-  {
-    icon: Phone,
-    title: "Phone",
-    content: "+233 24 000 0000",
-    href: "https://wa.me/+233240000000",
-  },
-  {
-    icon: MapPin,
-    title: "Location",
-    content: "M0435 NSROMA ST,\nCX-020-2382,\nKasoa, Ghana",
-    multiline: true,
-  },
-];
-
 const ContactUsPage: React.FC = () => {
   return (
     <div className="bg-background text-foreground">
@@ -70,7 +50,7 @@ const ContactUsPage: React.FC = () => {
           {/* map */}
           <div className='xl:w-1/2 bg-secondary h-[400px] rounded-lg overflow-hidden flex items-start'>
             <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d49636.978664854534!2d-0.4700387260925709!3d5.5298861651347115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sM0435%20NSROMA%20ST%2C%20Kasoa!5e0!3m2!1sen!2sgh!4v1739550295387!5m2!1sen!2sgh" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d590.7747267495773!2d-0.16891093280276884!3d5.667669488489916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9c4276f2de51%3A0x1de8877055eb4beb!2sWestland%20Blvd%20Rd%2C%20Accra!5e0!3m2!1sen!2sgh!4v1746794572933!5m2!1sen!2sgh"
             width="100%" 
             height="100%" 
             style={{border: 0}} 

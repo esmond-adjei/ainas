@@ -10,10 +10,11 @@ const crimsonPro = Crimson_Pro({
   variable: "--font-crimson",
   weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
 });
-
+ 
 export const metadata: Metadata = {
   title: "AINAS",
   description: "African Initiative for Nature-based Solutions",
+  metadataBase: new URL('https://www.ainas.org'),
 };
 
 export default function RootLayout({

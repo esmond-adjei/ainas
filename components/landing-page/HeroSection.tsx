@@ -65,6 +65,8 @@ function Hero() {
 }
 
 export default memo(Hero);
+
+
 type PageHeroProps = {
   title: string;
   description?: string;

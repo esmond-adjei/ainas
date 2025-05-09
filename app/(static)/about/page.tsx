@@ -1,12 +1,12 @@
 import React from 'react';
-import { 
-  Globe, 
-  Users, 
-  Target, 
-  Lightbulb, 
-  Shield, 
-  TreePine, 
-  BookOpen, 
+import {
+  Globe,
+  Users,
+  Target,
+  Lightbulb,
+  Shield,
+  TreePine,
+  BookOpen,
   Award,
   ChevronRight
 } from 'lucide-react';
@@ -15,14 +15,56 @@ import { ExpandableSection } from '@/components/ExpandableSection';
 import Section from '@/components/SectionLayout';
 import Link from 'next/link';
 import { ROUTES } from '@/lib';
+import type { Metadata } from 'next';
 
+export const metadata: Metadata = {
+  title: 'About AINAS | Our Mission, Vision, and Values',
+  description:
+    'Learn about the African Initiative for Nature-Based Solutions (AINAS). Discover our mission to empower African communities, our vision for a sustainable Africa, and the core values that drive our work in nature-based solutions.',
+  keywords: [
+    'AINAS',
+    'About AINAS',
+    'African Initiative for Nature-Based Solutions',
+    'Our Mission',
+    'Our Vision',
+    'Core Values',
+    'nature-based solutions Africa',
+    'sustainable development Africa',
+    'community empowerment',
+    'environmental sustainability',
+    'non-governmental organization',
+  ],
+  openGraph: {
+    title: 'About AINAS | Our Mission, Vision, and Values',
+    description:
+      'Discover the mission, vision, and core values of AINAS, an NGO dedicated to promoting nature-based solutions for a sustainable Africa.',
+    url: `https://www.ainas.org${ROUTES.about}`,
+    siteName: 'AINAS',
+    images: [
+      {
+        url: '/images/community-impact.webp',
+        width: 1200,
+        height: 630,
+        alt: 'About the African Initiative for Nature-based Solutions (AINAS)',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About AINAS | Our Mission, Vision, and Values',
+    description:
+      'Learn about AINAS: our mission to empower African communities, our vision for a sustainable future, and our core values.',
+    images: ['/images/community-impact.webp', '/logo.svg'],
+  },
+};
 
 interface CoreValueCardProps {
   icon: React.ComponentType<{ className?: string }>;
   title: string;
   description: string;
 }
-
 
 const FAQS = [
   {
@@ -55,7 +97,6 @@ const FAQS = [
   }
 ];
 
-
 const Values = [
   {
     icon: TreePine,
@@ -74,7 +115,6 @@ const Values = [
   }
 ];
 
-
 const STYLES = {
   text: 'mb-4',
   icon: 'size-12 text-primary mb-4',
@@ -92,7 +132,6 @@ const CoreValueCard: React.FC<CoreValueCardProps> = ({
     <p className="text-foreground">{description}</p>
   </div>
 );
-
 
 const AboutUsPage: React.FC = () => {
   return (
