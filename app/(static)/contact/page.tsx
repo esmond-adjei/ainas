@@ -3,7 +3,7 @@ import { Mail, Phone, MapPin } from 'lucide-react';
 import { ExpandableSection } from '@/components/ExpandableSection';
 import Section from '@/components/SectionLayout';
 import { PageHero } from '@/components/landing-page/HeroSection';
-import { CONTACTS } from '@/data/location';
+import { CONTACTS } from '@/content/location';
 
 
 const FAQS = [

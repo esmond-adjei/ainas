@@ -90,13 +90,15 @@ const TeamMemberDetail = async ({ params }: { params: Params }) => {
 
           <div>
             <h1 className="heading-2">{member.name}</h1>
-            <h2 className="text-primary font-medium text-base mb-2">{member.title}</h2>
+            <h2 className="text-primary font-medium text-base mb-2">
+              {member.title} <a className="underline text-secondary" href='https://www.ainas.org'>@AINAS</a>
+            </h2>
 
             <div
               className="md:text-justify text-gray-700 leading-relaxed prose"
               dangerouslySetInnerHTML={{ __html: member.contentHtml }}
             />
-
+{/* 
             {member.socialLinks && (
               <div className="mt-8 flex gap-4">
                 {member.socialLinks.linkedin && (
@@ -128,7 +130,7 @@ const TeamMemberDetail = async ({ params }: { params: Params }) => {
                   </a>
                 )}
               </div>
-            )}
+            )} */}
           </div>
         </div>
       </Section>

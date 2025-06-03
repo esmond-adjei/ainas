@@ -5,7 +5,7 @@ import ListPageLayout from '@/components/layout/ListPageLayout';
 import GalleryViewer, { GalleryImage } from '@/components/GalleryViewer';
 import React from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { getGalleryImages, GALLERY_IMAGES_LENGTH } from '@/data/gallery';
+import { getGalleryImages, GALLERY_IMAGES_LENGTH } from '@/content/gallery';
 
 
 export default function GalleryPage() {
@@ -72,7 +72,7 @@ export default function GalleryPage() {
 
       {selectedImage !== null && (
         <GalleryViewer
-          images={currentImages} // Pass only current page images
+          images={currentImages}
           initialIndex={selectedImage}
           onClose={() => setSelectedImage(null)}
         />
