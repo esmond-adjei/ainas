@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { Facebook, Instagram, Linkedin, Youtube, ArrowRight } from 'lucide-react';
 import { Logo } from './CustomIcon';
 import React from 'react';
-import { CONTACTS } from '@/data/location';
+import { CONTACTS } from '@/content/location';
 
 
 

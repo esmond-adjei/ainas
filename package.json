@@ -1,20 +1,22 @@
 {
   "name": "ainas-website",
   "version": "0.1.0",
-  "private": true,
-  "scripts": {
+  "private": true,  "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test:email": "node test-email.js"
   },
   "dependencies": {
+    "@types/nodemailer": "^6.4.17",
     "@vercel/analytics": "^1.5.0",
     "clsx": "^2.1.1",
     "framer-motion": "^11.11.13",
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.456.0",
     "next": "^15.2.4",
+    "nodemailer": "^7.0.3",
     "remark": "^15.0.1",
     "remark-html": "^16.0.1",
     "swiper": "^11.1.15",
