@@ -10,8 +10,8 @@ export const CONTACTS = [
   {
     icon: Phone,
     title: "Phone",
-    content: "+233 24 000 0000",
-    href: "https://wa.me/+233240000000",
+    content: "+233 25 612 0201",
+    href: "tel:+233256120201",
   },
   {
     icon: MapPin,

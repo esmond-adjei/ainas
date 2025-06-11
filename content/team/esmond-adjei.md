@@ -1,17 +1,19 @@
 ---
 name: "Esmond Adjei"
-title: "Tech & Innovations"
+title: "IT & Knowledge Management"
 imageSrc: "/images/profiles/esmond.png"
 slug: "esmond-adjei"
 order: 15
-summary: "Sweet Esmond"
+summary: "Esmond oversees AINAS's technology infrastructure and knowledge management systems, ensuring seamless digital operations and effective information sharing across the organization."
 socialLinks:
   linkedin: ""
   twitter: ""
   email: ""
 ---
-For a role encompassing all technology and IT responsibilities within your organization, the title **Chief Technology Officer (CTO)** is most appropriate. A CTO oversees the technological direction of an organization, aligning tech strategies with business goals, managing IT infrastructure, and leading innovation initiatives.&#x20;
+<!-- Esmond Adjei serves as AINAS's IT & Knowledge Management specialist, playing a crucial role in maintaining the organization's technological backbone and information systems. He is responsible for overseeing all IT infrastructure, ensuring robust and secure digital operations that support AINAS's mission across multiple African countries.
 
-If the role is more focused on day-to-day IT operations and infrastructure management, **Director of Information Technology** or **IT Director** would be suitable alternatives. This position typically handles the implementation and maintenance of IT systems, ensuring they meet the organization's needs.&#x20;
+In his knowledge management capacity, Esmond develops and maintains systems for capturing, organizing, and sharing critical information across the organization. He ensures that research findings, project data, best practices, and institutional knowledge are effectively documented and accessible to team members and stakeholders.
 
-Considering your organization's existing structure, where roles like **Director of Technology & Innovation** already exist, assigning the title **Chief Technology Officer (CTO)** would provide clear distinction and align with standard industry practices.
+His technical expertise encompasses network administration, database management, cybersecurity protocols, and digital collaboration tools that enable AINAS's distributed team to work efficiently. Esmond also leads the implementation of technology solutions that enhance project monitoring, data collection, and impact assessment for nature-based solutions initiatives.
+
+With a keen understanding of both technology and organizational needs, Esmond bridges the gap between complex technical systems and practical applications, ensuring that AINAS's digital infrastructure supports the organization's goal of empowering African communities through sustainable, nature-based solutions. -->

@@ -1,6 +1,7 @@
 'use client';
 
 import InfoCard from "@/components/InfoCard";
+import ContactForm from "@/components/ContactForm";
 import { Users, Hand, Heart, Briefcase } from 'lucide-react';
 
 const involvementOptions = [
@@ -39,62 +40,11 @@ const ContactUs = () => {
         style={{
             backgroundImage: `url(/pattern-randomized-light.svg)`,
         }}
-    >
-        {/* Contact Info Block */}
+    >        {/* Contact Info Block */}
         <div className="w-full xl:hcc xl:w-1/2">
             <div>
                 <h2 className="heading-1 text-center">Contact Us</h2>
-                <p className="heading-3 text-center mb-4 xl:mb-8">Send Us a Message</p>
-
-                {/* Contact Form */}     
-                <form action="#" method="POST" className="form-container mx-auto">
-                <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 mb-6">
-                    <div>
-                    <label htmlFor="name" className="block text-gray-700 text-sm">Name</label>
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        className="input"
-                        placeholder="Your Full Name"
-                    />
-                    </div>
-                    <div>
-                    <label htmlFor="email" className="block text-gray-700 text-sm">Email</label>
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        className="input"
-                        placeholder="Your Email"
-                    />
-                    </div>
-                </div>
-                
-                <div className="mb-6">
-                    <label htmlFor="subject" className="block text-gray-700 text-sm">Subject</label>
-                    <input
-                        type="text"
-                        id="subject"
-                        name="subject"
-                        className="input"
-                        placeholder="Subject of Your Message"
-                    />
-                </div>
-                
-                <div className="mb-6">
-                    <label htmlFor="message" className="block text-gray-700 text-sm">Message</label>
-                    <textarea
-                        id="message"
-                        name="message"
-                        className="input"
-                        rows={4}
-                        placeholder="Your Message"
-                    />
-                </div>
-                
-                <button type="submit" className="submit-btn w-full">Send Message</button>
-                </form>
+                <ContactForm />
             </div>
         </div>
 

@@ -3,6 +3,7 @@ import { Mail, Phone, MapPin } from 'lucide-react';
 import { ExpandableSection } from '@/components/ExpandableSection';
 import Section from '@/components/SectionLayout';
 import { PageHero } from '@/components/landing-page/HeroSection';
+import ContactForm from '@/components/ContactForm';
 import { CONTACTS } from '@/content/location';
 
 
@@ -47,18 +48,9 @@ const ContactUsPage: React.FC = () => {
 
         <section className="section flex flex-col-reverse xl:flex-row gap-10" >
 
-          {/* map */}
-          <div className='xl:w-1/2 bg-secondary h-[400px] rounded-lg overflow-hidden flex items-start'>
-            <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d590.7747267495773!2d-0.16891093280276884!3d5.667669488489916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9c4276f2de51%3A0x1de8877055eb4beb!2sWestland%20Blvd%20Rd%2C%20Accra!5e0!3m2!1sen!2sgh!4v1746794572933!5m2!1sen!2sgh"
-            width="100%" 
-            height="100%" 
-            style={{border: 0}} 
-            allowFullScreen={true}
-            loading="lazy" 
-            referrerPolicy="no-referrer-when-downgrade"
+            <ContactForm 
+              description="Have a question, partnership proposal, or want to learn more about our initiatives? We'd love to hear from you!"
             />
-          </div>
 
           {/* some text */}
           <div className="max-w-lg mx-auto">
@@ -91,9 +83,25 @@ const ContactUsPage: React.FC = () => {
                         </div>
                       </div>
                     ))}
-              </div>
-            </div>
+              </div>            
+          </div>
         </section>
+
+        <Section>
+          {/* map */}
+          <div className='bg-secondary h-[400px] rounded-lg overflow-hidden flex items-start'>
+            <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d590.7747267495773!2d-0.16891093280276884!3d5.667669488489916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9c4276f2de51%3A0x1de8877055eb4beb!2sWestland%20Blvd%20Rd%2C%20Accra!5e0!3m2!1sen!2sgh!4v1746794572933!5m2!1sen!2sgh"
+            width="100%" 
+            height="100%" 
+            style={{border: 0}} 
+            allowFullScreen={true}
+            loading="lazy" 
+            referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
+
+        </Section>
 
       <Section title='FAQs'>
         {FAQS.map((faq, idx) => (
