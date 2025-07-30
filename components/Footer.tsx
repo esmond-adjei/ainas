@@ -32,15 +32,15 @@ const quickLinks = [
 const socials = [
   {
     icon: Facebook,
-    href: 'https://facebook.com',
+    href: 'https://facebook.com/AINASorg',
   },
   {
     icon: Instagram,
-    href: 'https://instagram.com',
+    href: 'https://instagram.com/ainas_org',
   },
   {
     icon: Linkedin,
-    href: 'https://linkedin.com',
+    href: 'https://linkedin.com/company/african-initiative-for-nature-based-solutions',
   },
   {
     icon: Youtube,

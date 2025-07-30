@@ -1,5 +1,5 @@
 ---
-name: "Esmond Adjei"
+name: "Mr. Esmond Adjei"
 title: "IT & Knowledge Management"
 imageSrc: "/images/profiles/esmond.png"
 slug: "esmond-adjei"
