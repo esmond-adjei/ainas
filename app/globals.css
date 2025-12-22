@@ -20,6 +20,19 @@ html {
   p {
     @apply text-gray-800 font-serif text-lg leading-tight;
   }
+
+  .prose a {
+    @apply !text-primaryBright hover:!text-secondary;
+  }
+
+  .prose p {
+    @apply leading-7 text-lg;
+  }
+}
+
+::selection {
+    background: var(--primary-color-bright);
+    color: var(--background);
 }
 
 .nav-link {
@@ -43,7 +56,7 @@ html {
 }
 
 .link {
-  @apply underline underline-offset-2 hover:no-underline hover:text-primaryBright;
+  @apply underline underline-offset-2 hover:no-underline hover:text-secondary;
 }
 
 .submit-btn {
@@ -81,7 +94,7 @@ html {
 }
 
 .heading-1 {
-  @apply text-5xl font-semibold mb-4 font-serif;
+  @apply text-5xl font-semibold mb-4 font-serif leading-[1.15];
 }
 
 .heading-2 {

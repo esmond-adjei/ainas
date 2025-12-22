@@ -22,7 +22,11 @@ export async function generateMetadata({ params }: { params: Params }) {
 export default async function Post({ params }: { params: Params }) {
   const resolvedParams = await params;
   const post = await getPostData(decodeURIComponent(resolvedParams.id));
-  
+  const postDate = new Intl.DateTimeFormat('en-US', {
+      month: 'short',
+      day: 'numeric',
+      year: 'numeric'
+  }).format(new Date(post.date));
   return (
     <><PageHero
       title={post.title}
@@ -31,12 +35,12 @@ export default async function Post({ params }: { params: Params }) {
       />
       
       <div className="container relative mx-auto px-4 py-12">
-        <BackButton className="absolute left-10" />
+        <BackButton className="hidden md:block absolute left-10" />
 
         <article className="max-w-3xl mx-auto">
           <header className="mb-8">
-            <div className="flex flex-wrap gap-3 items-center text-gray-600">
-              <time className="text-sm">{new Date(post.date).toLocaleDateString()}</time>
+            <div className="flex flex-wrap gap-1 md:gap-3 items-center text-gray-600">
+              <time className="text-sm">{postDate}</time>
               {post.author && (
                 <>
                   <span className="text-sm">•</span>
@@ -53,7 +57,7 @@ export default async function Post({ params }: { params: Params }) {
           </header>
 
           <div
-            className="prose prose-lg max-w-none font-serif leading-tight"
+            className="prose md:prose-lg max-w-none font-serif leading-tight"
             dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
         </article>
       </div>

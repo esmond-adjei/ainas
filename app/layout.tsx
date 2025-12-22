@@ -23,8 +23,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${crimsonPro.variable} antialiased`}> 
+    <html lang="en" className={`${crimsonPro.variable} antialiased`}>
+      <body> 
         <Analytics/>
         <Navbar/>
           <main>{children}</main>

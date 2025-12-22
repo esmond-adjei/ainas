@@ -1,5 +1,4 @@
 import React from 'react';
-import { Mail, Phone, MapPin } from 'lucide-react';
 import { ExpandableSection } from '@/components/ExpandableSection';
 import Section from '@/components/SectionLayout';
 import { PageHero } from '@/components/landing-page/HeroSection';

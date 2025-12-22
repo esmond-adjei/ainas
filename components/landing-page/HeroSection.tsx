@@ -96,9 +96,9 @@ export function PageHero({ title, description, backgroundImage }: PageHeroProps)
 
       {/* Content */}
       <div className="relative z-10 px-4 container mx-auto max-w-2xl">
-        <h1 className="heading-1 text-white text-center mb-6">{title}</h1>
+        <h1 className="heading-1 text-white text-center mb-6 line-clamp-2">{title}</h1>
         {description && (
-          <p className="heading-3 text-center text-wrap text-light">
+          <p className="heading-3 text-center text-wrap text-light line-clamp-3">
             {description}
           </p>
         )}

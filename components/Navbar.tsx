@@ -39,7 +39,7 @@ const NAV_ITEMS: (NavItem | DropdownItem)[] = [
     path: '',
     items: [
       { name: 'Our Impact', path: ROUTES.impact, disabled: true },
-      { name: 'Blog', path: ROUTES.blog, disabled: true },
+      { name: 'Blog', path: ROUTES.blog, disabled: false },
       { name: 'Reports', path: ROUTES.report, disabled: true },
     ],
   },
