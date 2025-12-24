@@ -10,12 +10,12 @@ import {
   Award,
   ChevronRight
 } from 'lucide-react';
-import { PageHero } from '../../../components/landing-page/HeroSection';
 import { ExpandableSection } from '@/components/ExpandableSection';
 import Section from '@/components/SectionLayout';
 import Link from 'next/link';
 import { ROUTES } from '@/lib';
 import type { Metadata } from 'next';
+import { PageHero } from '@/components/layout/PageHero';
 
 export const metadata: Metadata = {
   title: 'About AINAS | Our Mission, Vision, and Values',

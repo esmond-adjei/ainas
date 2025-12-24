@@ -1,4 +1,4 @@
-import { PageHero } from "@/components/landing-page/HeroSection";
+import { PageHero } from "./PageHero";
 
 
 export default function ListPageLayout({

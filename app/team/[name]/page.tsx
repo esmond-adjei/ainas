@@ -1,8 +1,8 @@
 import { notFound } from 'next/navigation';
 import Section from '@/components/SectionLayout';
 import { getTeamMemberBySlug } from '@/lib/data-provider';
-import { PageHero } from '@/components/landing-page/HeroSection';
 import { BackButton } from '@/components/BackButton';
+import { PageHero } from '@/components/layout/PageHero';
 
 
 type Params = Promise<{ name: string }>

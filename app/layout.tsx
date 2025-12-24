@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Crimson_Pro } from "next/font/google";
+import { Crimson_Pro, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -11,6 +11,11 @@ const crimsonPro = Crimson_Pro({
   weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
 });
  
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
+
 export const metadata: Metadata = {
   title: "AINAS",
   description: "African Initiative for Nature-based Solutions",
@@ -23,7 +28,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${crimsonPro.variable} antialiased`}>
+    <html lang="en" className={`${crimsonPro.variable} ${inter.variable} antialiased`}>
       <body> 
         <Analytics/>
         <Navbar/>

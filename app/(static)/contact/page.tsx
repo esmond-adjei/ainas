@@ -1,9 +1,9 @@
 import React from 'react';
 import { ExpandableSection } from '@/components/ExpandableSection';
 import Section from '@/components/SectionLayout';
-import { PageHero } from '@/components/landing-page/HeroSection';
 import ContactForm from '@/components/ContactForm';
 import { CONTACTS } from '@/content/location';
+import { PageHero } from '@/components/layout/PageHero';
 
 
 const FAQS = [

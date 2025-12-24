@@ -1,5 +1,5 @@
-import { PageHero } from '@/components/landing-page/HeroSection';
 import { BackButton } from '@/components/BackButton';
+import { PageHero } from '@/components/layout/PageHero';
 import { getAllPostIds, getPostData } from '@/lib/data-provider';
 
 export async function generateStaticParams() {
