@@ -34,15 +34,16 @@ const NAV_ITEMS: (NavItem | DropdownItem)[] = [
   { name: 'Team', path: ROUTES.team },
   { name: 'Contact', path: ROUTES.contact },
   { name: 'Gallery', path: ROUTES.gallery },
-  {
-    name: 'Explore',
-    path: '',
-    items: [
-      { name: 'Our Impact', path: ROUTES.impact, disabled: true },
-      { name: 'Blog', path: ROUTES.blog, disabled: false },
-      { name: 'Reports', path: ROUTES.report, disabled: true },
-    ],
-  },
+  { name: 'Blog', path: ROUTES.blog },
+  // {
+  //   name: 'Explore',
+  //   path: '',
+  //   items: [
+  //     { name: 'Our Impact', path: ROUTES.impact, disabled: true },
+  //     { name: 'Blog', path: ROUTES.blog, disabled: false },
+  //     { name: 'Reports', path: ROUTES.report, disabled: true },
+  //   ],
+  // },
 ];
 
 const DropDownMenuItem: React.FC<DropDownMenuItemProps> = ({
