@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Analytics } from "@vercel/analytics/react"
+import { AppMessageHeader } from "@/components/BannerMessage";
 
 const crimsonPro = Crimson_Pro({
   subsets: ["latin"],
@@ -31,6 +32,7 @@ export default function RootLayout({
     <html lang="en" className={`${crimsonPro.variable} ${inter.variable} antialiased`}>
       <body> 
         <Analytics/>
+        <AppMessageHeader />
         <Navbar/>
           <main>{children}</main>
         <Footer/>     

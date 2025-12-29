@@ -21,7 +21,11 @@ export async function generateMetadata({ params }: { params: Params }) {
 export default async function Report({ params }: { params: Params }) {
   const resolvedParams = await params;
   const report = await getReportData(decodeURIComponent(resolvedParams.id));
-  
+  const postDate = new Intl.DateTimeFormat('en-US', {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric'
+  }).format(new Date(report.date));
   return (
         <><PageHero
           title={report.title}
@@ -35,7 +39,7 @@ export default async function Report({ params }: { params: Params }) {
             <article className="max-w-3xl mx-auto">
               <header className="mb-8">
                 <div className="flex flex-wrap gap-3 items-center text-gray-600">
-                  <time className="text-sm">{new Date(report.date).toLocaleDateString()}</time>
+                  <time className="text-sm">{postDate}</time>
                   {report.author && (
                     <>
                       <span className="text-sm">•</span>
