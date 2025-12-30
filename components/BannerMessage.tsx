@@ -22,7 +22,7 @@ interface Message {
 
 const APP_MESSAGES: Message[] = [
     {
-        id: '1',
+        id: '0',
         type: 'image',
         src: '/images/blog/dr-caleb-ejp.webp',
         heading: "New Summer Collection",
@@ -32,16 +32,14 @@ const APP_MESSAGES: Message[] = [
         duration: 5000,
     },
     {
-        id: '2',
+        id: '1',
         type: 'image',
         src: '/images/blog/dr-caleb-ejp.webp',
-        heading: "Pro Features Available",
-        subheading: "Upgrade your account to unlock advanced analytics and reports.",
-        primaryButtonText: "Upgrade",
-        primaryButtonLink: "/pricing",
-        secondaryButtonText: "Learn More",
-        secondaryButtonLink: "/features",
-        duration: 7000,
+        heading: "New Summer Collection",
+        subheading: "Discover the latest trends in sustainable fashion.",
+        primaryButtonText: "Shop Now",
+        primaryButtonLink: "/shop",
+        duration: 5000,
     }
 ];
 

@@ -17,6 +17,13 @@ const HERO_SLIDES = [
     secondaryCta: { label: "Get Involved", href: ROUTES.contact }
   },
   {
+    id: 0,
+    image: '/images/blog/dr-caleb-ejp.webp',
+    title: "President's End-of-year Message",
+    primaryCta: { label: "Read Message", href: '/reports/end-of-year-2025-presidential-message' },
+    secondaryCta: { label: "Join Us", href: ROUTES.contact }
+  },
+  {
     id: 2,
     image: '/images/blog/carbonxtra-workshop-2.jpg',
     title: "Protecting Our Ecosystems",

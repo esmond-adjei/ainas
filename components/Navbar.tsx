@@ -202,7 +202,7 @@ export default function Navbar() {
 
   return (
     <motion.header
-      className={`sticky hcb flex-wrap top-0 z-40 w-full p-4 lg:px-10 transition-all duration-200 ${
+      className={`fixed hcb flex-wrap top-0 z-40 w-full p-4 lg:px-10 transition-all duration-200 ${
         isScrolled ? 'bg-white shadow-sm text-dark' : 'bg-transparent text-light'
       }`}
       initial={{ y: -100, opacity: 0 }}
